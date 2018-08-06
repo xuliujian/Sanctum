@@ -63,7 +63,7 @@
     "Forms.Membership.ForgotPassword.Success": "Es wurde eine E-Mail mit Informationen zum Zurücksetzen des Kennworts an Ihre E-Mail-Adresse geschickt.",
     "Forms.Membership.Login.ForgotPassword": "Kennwort vergessen?",
     "Forms.Membership.Login.FormTitle": "Willkommen zu SERENE (Serenity Application Template)",
-    "Forms.Membership.Login.Password_Placeholder": "Standardkennwort ist 'serenity",
+    "Forms.Membership.Login.Password_Placeholder": "Standardkennwort",
     "Forms.Membership.Login.SignInButton": "Anmelden",
     "Forms.Membership.Login.SignUpButton": "Registrieren",
     "Forms.Membership.ResetPassword.EmailSubject": "Zurücksetzen Ihres Kennworts bei Sanctum",

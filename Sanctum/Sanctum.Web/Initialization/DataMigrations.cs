@@ -181,6 +181,7 @@
             bool isOracle = serverType.StartsWith("Oracle", StringComparison.OrdinalIgnoreCase);
             bool isFirebird = serverType.StartsWith("Firebird", StringComparison.OrdinalIgnoreCase);
 
+#if __SkippedMigrations__
             // safety check to ensure that we are not modifying an arbitrary database.
             // remove these lines if you want Sanctum migrations to run on your DB.
             if (!isOracle && cs.ConnectionString.IndexOf(typeof(DataMigrations).Namespace +
@@ -189,6 +190,7 @@
                 SkippedMigrations = true;
                 return;
             }
+#endif
 
             string databaseType = isOracle ? "OracleManaged" : serverType;
 

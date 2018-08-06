@@ -92,7 +92,7 @@ namespace Sanctum
         public static class Navigation
         {
             public static LocalText LogoutLink = "Logout";
-            public static LocalText SiteTitle = "Sanctum";
+            public static LocalText SiteTitle = "圣人书架";
         }
 
         public static class Site
@@ -108,9 +108,7 @@ namespace Sanctum
 
             public static class Dashboard
             {
-                public static LocalText ContentDescription =
-                    "a sample with random data (from free <em><a href = \"https://almsaeedstudio.com/\" target= \"_blank\">" +
-                    "AdminLTE theme</a></em>)";
+                public static LocalText ContentDescription = "";
             }
 
             public static class BasicProgressDialog

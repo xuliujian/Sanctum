@@ -47,7 +47,7 @@
   "Forms.Membership.ForgotPassword.Success": "Şifre sıfırlama direktiflerini içeren bir mesaj e-posta adresinize gönderildi.",
   "Forms.Membership.Login.ForgotPassword": "şifremi unuttum?",
   "Forms.Membership.Login.FormTitle": "SERENE'ye Hoşgeldiniz (Serenity Uygulama Şablonu)",
-  "Forms.Membership.Login.Password_Placeholder": "varsayılan şifre 'serenity'",
+  "Forms.Membership.Login.Password_Placeholder": "varsayılan şifre",
   "Forms.Membership.Login.SignInButton": "Giriş",
   "Forms.Membership.Login.Username_Placeholder": "varsayılan kullanıcı adı 'admin'",
   "Forms.Membership.ResetPassword.ConfirmPassword": "Şifre Onay",

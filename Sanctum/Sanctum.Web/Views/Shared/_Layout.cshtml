@@ -20,7 +20,7 @@
 <head>
     @{Html.RenderPartial(MVC.Views.Shared._LayoutHead);}
     @RenderSection("Head", false)
-    <title>@(ViewData["Title"]) - Sanctum</title>
+    <title>@(ViewData["Title"]) - @LocalText.Get("Navigation.SiteTitle")</title>
 </head>
 <body id="s-@(ViewData["PageId"])Page" class="@(ViewData["BodyClass"]) fixed sidebar-mini hold-transition skin-@theme @(darkSidebar ? "dark-sidebar" : "light-sidebar")@(hideNav ? " no-navigation" : " has-layout-event")@(rtl ? " rtl" : "")">
 <div id="PageBackground" style="display: none"></div>
