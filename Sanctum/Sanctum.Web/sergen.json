@@ -1,0 +1,9 @@
+﻿{
+  "RootNamespace": "Sanctum",
+  "ServerTypings": {
+    "Assemblies": []
+  },
+  "Connections": [],
+  "BaseRowClasses": [],
+  "RemoveForeignFields": []
+}
