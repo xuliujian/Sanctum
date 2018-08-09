@@ -404,209 +404,6 @@ declare namespace Sanctum.Administration {
         }
     }
 }
-declare namespace Sanctum.BasicSamples {
-    namespace BasicSamplesService {
-        const baseUrl = "BasicSamples/BasicSamples";
-        function OrdersByShipper(request: OrdersByShipperRequest, onSuccess?: (response: OrdersByShipperResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function OrderBulkAction(request: OrderBulkActionRequest, onSuccess?: (response: Serenity.ServiceResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        const enum Methods {
-            OrdersByShipper = "BasicSamples/BasicSamples/OrdersByShipper",
-            OrderBulkAction = "BasicSamples/BasicSamples/OrderBulkAction",
-        }
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    interface ChangingLookupTextForm {
-        ProductID: ChangingLookupTextEditor;
-        UnitPrice: Serenity.DecimalEditor;
-        Quantity: Serenity.IntegerEditor;
-        Discount: Serenity.DecimalEditor;
-    }
-    class ChangingLookupTextForm extends Serenity.PrefixedContext {
-        static formKey: string;
-        private static init;
-        constructor(prefix: string);
-    }
-}
-declare namespace Sanctum.BasicSamples {
-}
-declare namespace Sanctum.BasicSamples {
-    interface CustomerGrossSalesListRequest extends Serenity.ListRequest {
-        StartDate?: string;
-        EndDate?: string;
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    namespace CustomerGrossSalesService {
-        const baseUrl = "BasicSamples/CustomerGrossSales";
-        function List(request: CustomerGrossSalesListRequest, onSuccess?: (response: Serenity.ListResponse<Northwind.CustomerGrossSalesRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        const enum Methods {
-            List = "BasicSamples/CustomerGrossSales/List",
-        }
-    }
-}
-declare namespace Sanctum.BasicSamples {
-}
-declare namespace Sanctum.BasicSamples {
-    interface DragDropSampleForm {
-        Title: Serenity.StringEditor;
-    }
-    class DragDropSampleForm extends Serenity.PrefixedContext {
-        static formKey: string;
-        private static init;
-        constructor(prefix: string);
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    interface DragDropSampleRow {
-        Id?: number;
-        ParentId?: number;
-        Title?: string;
-    }
-    namespace DragDropSampleRow {
-        const idProperty = "Id";
-        const nameProperty = "Title";
-        const localTextPrefix = "Northwind.DragDropSample";
-        const enum Fields {
-            Id = "Id",
-            ParentId = "ParentId",
-            Title = "Title",
-        }
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    namespace DragDropSampleService {
-        const baseUrl = "BasicSamples/DragDropSample";
-        function Create(request: Serenity.SaveRequest<DragDropSampleRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Update(request: Serenity.SaveRequest<DragDropSampleRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<DragDropSampleRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<DragDropSampleRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        const enum Methods {
-            Create = "BasicSamples/DragDropSample/Create",
-            Update = "BasicSamples/DragDropSample/Update",
-            Delete = "BasicSamples/DragDropSample/Delete",
-            Retrieve = "BasicSamples/DragDropSample/Retrieve",
-            List = "BasicSamples/DragDropSample/List",
-        }
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    interface FilteredLookupInDetailForm {
-        CustomerID: Northwind.CustomerEditor;
-        OrderDate: Serenity.DateEditor;
-        CategoryID: Serenity.LookupEditor;
-        DetailList: FilteredLookupDetailEditor;
-    }
-    class FilteredLookupInDetailForm extends Serenity.PrefixedContext {
-        static formKey: string;
-        private static init;
-        constructor(prefix: string);
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    interface HardcodedValuesForm {
-        SomeValue: HardcodedValuesEditor;
-    }
-    class HardcodedValuesForm extends Serenity.PrefixedContext {
-        static formKey: string;
-        private static init;
-        constructor(prefix: string);
-    }
-}
-declare namespace Sanctum.BasicSamples {
-}
-declare namespace Sanctum.BasicSamples {
-    interface LookupFilterByMultipleForm {
-        ProductName: Serenity.StringEditor;
-        ProductImage: Serenity.ImageUploadEditor;
-        Discontinued: Serenity.BooleanEditor;
-        SupplierID: Serenity.LookupEditor;
-        CategoryID: ProduceSeafoodCategoryEditor;
-        QuantityPerUnit: Serenity.StringEditor;
-        UnitPrice: Serenity.DecimalEditor;
-        UnitsInStock: Serenity.IntegerEditor;
-        UnitsOnOrder: Serenity.IntegerEditor;
-        ReorderLevel: Serenity.IntegerEditor;
-    }
-    class LookupFilterByMultipleForm extends Serenity.PrefixedContext {
-        static formKey: string;
-        private static init;
-        constructor(prefix: string);
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    interface OrderBulkActionRequest extends Serenity.ServiceRequest {
-        OrderIDs?: number[];
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    interface OrdersByShipperRequest extends Serenity.ServiceRequest {
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    interface OrdersByShipperResponse extends Serenity.ServiceResponse {
-        Values?: {
-            [key: string]: any;
-        }[];
-        ShipperKeys?: string[];
-        ShipperLabels?: string[];
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    interface PopulateLinkedDataForm {
-        CustomerID: Northwind.CustomerEditor;
-        CustomerContactName: Serenity.StringEditor;
-        CustomerContactTitle: Serenity.StringEditor;
-        CustomerCity: Serenity.StringEditor;
-        CustomerRegion: Serenity.StringEditor;
-        CustomerCountry: Serenity.StringEditor;
-        CustomerPhone: Serenity.StringEditor;
-        CustomerFax: Serenity.StringEditor;
-        OrderDate: Serenity.DateEditor;
-        RequiredDate: Serenity.DateEditor;
-        EmployeeID: Serenity.LookupEditor;
-        DetailList: Northwind.OrderDetailsEditor;
-    }
-    class PopulateLinkedDataForm extends Serenity.PrefixedContext {
-        static formKey: string;
-        private static init;
-        constructor(prefix: string);
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    interface ProductExcelImportForm {
-        FileName: Serenity.ImageUploadEditor;
-    }
-    class ProductExcelImportForm extends Serenity.PrefixedContext {
-        static formKey: string;
-        private static init;
-        constructor(prefix: string);
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    namespace ProductExcelImportService {
-        const baseUrl = "BasicSamples/ProductExcelImport";
-        function ExcelImport(request: ExcelImportRequest, onSuccess?: (response: ExcelImportResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        const enum Methods {
-            ExcelImport = "BasicSamples/ProductExcelImport/ExcelImport",
-        }
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    interface StaticTextBlockForm {
-        StaticText: StaticTextBlock;
-        SomeInput: Serenity.StringEditor;
-        HtmlList: StaticTextBlock;
-        FromLocalText: StaticTextBlock;
-        DisplayFieldValue: StaticTextBlock;
-    }
-    class StaticTextBlockForm extends Serenity.PrefixedContext {
-        static formKey: string;
-        private static init;
-        constructor(prefix: string);
-    }
-}
 declare namespace Sanctum.Common.Pages {
     interface UploadResponse extends Serenity.ServiceResponse {
         TemporaryFile?: string;
@@ -664,6 +461,935 @@ declare namespace Sanctum.Common {
         PreferenceType?: string;
         Name?: string;
         Value?: string;
+    }
+}
+declare namespace Sanctum.Community {
+}
+declare namespace Sanctum.Community {
+    interface AreaForm {
+        Pid: Serenity.StringEditor;
+        ShortName: Serenity.StringEditor;
+        Name: Serenity.StringEditor;
+        FullName: Serenity.StringEditor;
+        Level: Serenity.IntegerEditor;
+        PinYin: Serenity.StringEditor;
+        Code: Serenity.StringEditor;
+        ZipCode: Serenity.StringEditor;
+        FirstChar: Serenity.StringEditor;
+        Longitude: Serenity.DecimalEditor;
+        Latitude: Serenity.DecimalEditor;
+    }
+    class AreaForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace Sanctum.Community {
+    interface AreaRow {
+        Id?: string;
+        Pid?: string;
+        ShortName?: string;
+        Name?: string;
+        FullName?: string;
+        Level?: number;
+        PinYin?: string;
+        Code?: string;
+        ZipCode?: string;
+        FirstChar?: string;
+        Longitude?: number;
+        Latitude?: number;
+    }
+    namespace AreaRow {
+        const idProperty = "Id";
+        const nameProperty = "Id";
+        const localTextPrefix = "Community.Area";
+        const enum Fields {
+            Id = "Id",
+            Pid = "Pid",
+            ShortName = "ShortName",
+            Name = "Name",
+            FullName = "FullName",
+            Level = "Level",
+            PinYin = "PinYin",
+            Code = "Code",
+            ZipCode = "ZipCode",
+            FirstChar = "FirstChar",
+            Longitude = "Longitude",
+            Latitude = "Latitude",
+        }
+    }
+}
+declare namespace Sanctum.Community {
+    namespace AreaService {
+        const baseUrl = "Community/Area";
+        function Create(request: Serenity.SaveRequest<AreaRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<AreaRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<AreaRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<AreaRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Community/Area/Create",
+            Update = "Community/Area/Update",
+            Delete = "Community/Area/Delete",
+            Retrieve = "Community/Area/Retrieve",
+            List = "Community/Area/List",
+        }
+    }
+}
+declare namespace Sanctum.Community {
+}
+declare namespace Sanctum.Community {
+    interface BookCategoryForm {
+        CategoryName: Serenity.StringEditor;
+        ParentId: Serenity.IntegerEditor;
+        Remark: Serenity.StringEditor;
+        IsEnable: Serenity.BooleanEditor;
+        Creator: Serenity.IntegerEditor;
+        CreatedTime: Serenity.DateEditor;
+        Modifier: Serenity.IntegerEditor;
+        ModifiedTime: Serenity.DateEditor;
+    }
+    class BookCategoryForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace Sanctum.Community {
+    interface BookCategoryRow {
+        Id?: number;
+        CategoryName?: string;
+        ParentId?: number;
+        Remark?: string;
+        IsEnable?: boolean;
+        Creator?: number;
+        CreatedTime?: string;
+        Modifier?: number;
+        ModifiedTime?: string;
+    }
+    namespace BookCategoryRow {
+        const idProperty = "Id";
+        const nameProperty = "CategoryName";
+        const localTextPrefix = "Community.BookCategory";
+        const enum Fields {
+            Id = "Id",
+            CategoryName = "CategoryName",
+            ParentId = "ParentId",
+            Remark = "Remark",
+            IsEnable = "IsEnable",
+            Creator = "Creator",
+            CreatedTime = "CreatedTime",
+            Modifier = "Modifier",
+            ModifiedTime = "ModifiedTime",
+        }
+    }
+}
+declare namespace Sanctum.Community {
+    namespace BookCategoryService {
+        const baseUrl = "Community/BookCategory";
+        function Create(request: Serenity.SaveRequest<BookCategoryRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<BookCategoryRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<BookCategoryRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<BookCategoryRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Community/BookCategory/Create",
+            Update = "Community/BookCategory/Update",
+            Delete = "Community/BookCategory/Delete",
+            Retrieve = "Community/BookCategory/Retrieve",
+            List = "Community/BookCategory/List",
+        }
+    }
+}
+declare namespace Sanctum.Community {
+}
+declare namespace Sanctum.Community {
+    interface BookCommentForm {
+        BookId: Serenity.IntegerEditor;
+        CommentUserId: Serenity.IntegerEditor;
+        ApprovalCount: Serenity.IntegerEditor;
+        CommentContent: Serenity.StringEditor;
+        ReplyCommentId: Serenity.IntegerEditor;
+        CommentTime: Serenity.DateEditor;
+    }
+    class BookCommentForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace Sanctum.Community {
+    interface BookCommentRow {
+        Id?: number;
+        BookId?: number;
+        CommentUserId?: number;
+        ApprovalCount?: number;
+        CommentContent?: string;
+        ReplyCommentId?: number;
+        CommentTime?: string;
+    }
+    namespace BookCommentRow {
+        const idProperty = "Id";
+        const nameProperty = "CommentContent";
+        const localTextPrefix = "Community.BookComment";
+        const enum Fields {
+            Id = "Id",
+            BookId = "BookId",
+            CommentUserId = "CommentUserId",
+            ApprovalCount = "ApprovalCount",
+            CommentContent = "CommentContent",
+            ReplyCommentId = "ReplyCommentId",
+            CommentTime = "CommentTime",
+        }
+    }
+}
+declare namespace Sanctum.Community {
+    namespace BookCommentService {
+        const baseUrl = "Community/BookComment";
+        function Create(request: Serenity.SaveRequest<BookCommentRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<BookCommentRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<BookCommentRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<BookCommentRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Community/BookComment/Create",
+            Update = "Community/BookComment/Update",
+            Delete = "Community/BookComment/Delete",
+            Retrieve = "Community/BookComment/Retrieve",
+            List = "Community/BookComment/List",
+        }
+    }
+}
+declare namespace Sanctum.Community {
+}
+declare namespace Sanctum.Community {
+    interface BookFriendForm {
+        GroupId: Serenity.IntegerEditor;
+        MemberId: Serenity.IntegerEditor;
+        Status: Serenity.IntegerEditor;
+        ActiveLevel: Serenity.DecimalEditor;
+        JoinTime: Serenity.DateEditor;
+    }
+    class BookFriendForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace Sanctum.Community {
+}
+declare namespace Sanctum.Community {
+    interface BookFriendGroupForm {
+        GroupName: Serenity.StringEditor;
+        OwnerId: Serenity.IntegerEditor;
+        CreatedTime: Serenity.DateEditor;
+    }
+    class BookFriendGroupForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace Sanctum.Community {
+    interface BookFriendGroupRow {
+        Id?: number;
+        GroupName?: string;
+        OwnerId?: number;
+        CreatedTime?: string;
+    }
+    namespace BookFriendGroupRow {
+        const idProperty = "Id";
+        const nameProperty = "GroupName";
+        const localTextPrefix = "Community.BookFriendGroup";
+        const enum Fields {
+            Id = "Id",
+            GroupName = "GroupName",
+            OwnerId = "OwnerId",
+            CreatedTime = "CreatedTime",
+        }
+    }
+}
+declare namespace Sanctum.Community {
+    namespace BookFriendGroupService {
+        const baseUrl = "Community/BookFriendGroup";
+        function Create(request: Serenity.SaveRequest<BookFriendGroupRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<BookFriendGroupRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<BookFriendGroupRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<BookFriendGroupRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Community/BookFriendGroup/Create",
+            Update = "Community/BookFriendGroup/Update",
+            Delete = "Community/BookFriendGroup/Delete",
+            Retrieve = "Community/BookFriendGroup/Retrieve",
+            List = "Community/BookFriendGroup/List",
+        }
+    }
+}
+declare namespace Sanctum.Community {
+    interface BookFriendRow {
+        Id?: number;
+        GroupId?: number;
+        MemberId?: number;
+        Status?: number;
+        ActiveLevel?: number;
+        JoinTime?: string;
+    }
+    namespace BookFriendRow {
+        const idProperty = "Id";
+        const localTextPrefix = "Community.BookFriend";
+        const enum Fields {
+            Id = "Id",
+            GroupId = "GroupId",
+            MemberId = "MemberId",
+            Status = "Status",
+            ActiveLevel = "ActiveLevel",
+            JoinTime = "JoinTime",
+        }
+    }
+}
+declare namespace Sanctum.Community {
+    namespace BookFriendService {
+        const baseUrl = "Community/BookFriend";
+        function Create(request: Serenity.SaveRequest<BookFriendRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<BookFriendRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<BookFriendRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<BookFriendRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Community/BookFriend/Create",
+            Update = "Community/BookFriend/Update",
+            Delete = "Community/BookFriend/Delete",
+            Retrieve = "Community/BookFriend/Retrieve",
+            List = "Community/BookFriend/List",
+        }
+    }
+}
+declare namespace Sanctum.Community {
+}
+declare namespace Sanctum.Community {
+    interface BookshelfForm {
+        BookshelfName: Serenity.StringEditor;
+        AdornBackground: Serenity.StringEditor;
+        Introduction: Serenity.StringEditor;
+        Creator: Serenity.IntegerEditor;
+        CreatedTime: Serenity.DateEditor;
+        Modifier: Serenity.IntegerEditor;
+        ModifiedTime: Serenity.DateEditor;
+    }
+    class BookshelfForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace Sanctum.Community {
+    interface BookshelfRow {
+        Id?: number;
+        BookshelfName?: string;
+        AdornBackground?: string;
+        Introduction?: string;
+        Creator?: number;
+        CreatedTime?: string;
+        Modifier?: number;
+        ModifiedTime?: string;
+    }
+    namespace BookshelfRow {
+        const idProperty = "Id";
+        const nameProperty = "BookshelfName";
+        const localTextPrefix = "Community.Bookshelf";
+        const enum Fields {
+            Id = "Id",
+            BookshelfName = "BookshelfName",
+            AdornBackground = "AdornBackground",
+            Introduction = "Introduction",
+            Creator = "Creator",
+            CreatedTime = "CreatedTime",
+            Modifier = "Modifier",
+            ModifiedTime = "ModifiedTime",
+        }
+    }
+}
+declare namespace Sanctum.Community {
+    namespace BookshelfService {
+        const baseUrl = "Community/Bookshelf";
+        function Create(request: Serenity.SaveRequest<BookshelfRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<BookshelfRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<BookshelfRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<BookshelfRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Community/Bookshelf/Create",
+            Update = "Community/Bookshelf/Update",
+            Delete = "Community/Bookshelf/Delete",
+            Retrieve = "Community/Bookshelf/Retrieve",
+            List = "Community/Bookshelf/List",
+        }
+    }
+}
+declare namespace Sanctum.Community {
+}
+declare namespace Sanctum.Community {
+    interface BorrowApplyForm {
+        ApplyBookId: Serenity.IntegerEditor;
+        Applier: Serenity.IntegerEditor;
+        ApplyTime: Serenity.DateEditor;
+        ApplyStatus: Serenity.IntegerEditor;
+    }
+    class BorrowApplyForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace Sanctum.Community {
+    interface BorrowApplyRow {
+        Id?: number;
+        ApplyBookId?: number;
+        Applier?: number;
+        ApplyTime?: string;
+        ApplyStatus?: number;
+    }
+    namespace BorrowApplyRow {
+        const idProperty = "Id";
+        const localTextPrefix = "Community.BorrowApply";
+        const enum Fields {
+            Id = "Id",
+            ApplyBookId = "ApplyBookId",
+            Applier = "Applier",
+            ApplyTime = "ApplyTime",
+            ApplyStatus = "ApplyStatus",
+        }
+    }
+}
+declare namespace Sanctum.Community {
+    namespace BorrowApplyService {
+        const baseUrl = "Community/BorrowApply";
+        function Create(request: Serenity.SaveRequest<BorrowApplyRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<BorrowApplyRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<BorrowApplyRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<BorrowApplyRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Community/BorrowApply/Create",
+            Update = "Community/BorrowApply/Update",
+            Delete = "Community/BorrowApply/Delete",
+            Retrieve = "Community/BorrowApply/Retrieve",
+            List = "Community/BorrowApply/List",
+        }
+    }
+}
+declare namespace Sanctum.Community {
+}
+declare namespace Sanctum.Community {
+    interface BorrowRecordForm {
+        DebitUserId: Serenity.IntegerEditor;
+        BorrowTime: Serenity.DateEditor;
+        BookId: Serenity.IntegerEditor;
+        BorrowRequirementId: Serenity.IntegerEditor;
+        BorrowApplyId: Serenity.IntegerEditor;
+        Status: Serenity.IntegerEditor;
+        AcceptTime: Serenity.DateEditor;
+        RevertTime: Serenity.DateEditor;
+        DebitRemarkContent: Serenity.StringEditor;
+        DebitRemarkTime: Serenity.DateEditor;
+        RenterRemarkContent: Serenity.StringEditor;
+        RenterRemarkTime: Serenity.DateEditor;
+    }
+    class BorrowRecordForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace Sanctum.Community {
+    interface BorrowRecordRow {
+        Id?: number;
+        DebitUserId?: number;
+        BorrowTime?: string;
+        BookId?: number;
+        BorrowRequirementId?: number;
+        BorrowApplyId?: number;
+        Status?: number;
+        AcceptTime?: string;
+        RevertTime?: string;
+        DebitRemarkContent?: string;
+        DebitRemarkTime?: string;
+        RenterRemarkContent?: string;
+        RenterRemarkTime?: string;
+    }
+    namespace BorrowRecordRow {
+        const idProperty = "Id";
+        const nameProperty = "DebitRemarkContent";
+        const localTextPrefix = "Community.BorrowRecord";
+        const enum Fields {
+            Id = "Id",
+            DebitUserId = "DebitUserId",
+            BorrowTime = "BorrowTime",
+            BookId = "BookId",
+            BorrowRequirementId = "BorrowRequirementId",
+            BorrowApplyId = "BorrowApplyId",
+            Status = "Status",
+            AcceptTime = "AcceptTime",
+            RevertTime = "RevertTime",
+            DebitRemarkContent = "DebitRemarkContent",
+            DebitRemarkTime = "DebitRemarkTime",
+            RenterRemarkContent = "RenterRemarkContent",
+            RenterRemarkTime = "RenterRemarkTime",
+        }
+    }
+}
+declare namespace Sanctum.Community {
+    namespace BorrowRecordService {
+        const baseUrl = "Community/BorrowRecord";
+        function Create(request: Serenity.SaveRequest<BorrowRecordRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<BorrowRecordRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<BorrowRecordRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<BorrowRecordRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Community/BorrowRecord/Create",
+            Update = "Community/BorrowRecord/Update",
+            Delete = "Community/BorrowRecord/Delete",
+            Retrieve = "Community/BorrowRecord/Retrieve",
+            List = "Community/BorrowRecord/List",
+        }
+    }
+}
+declare namespace Sanctum.Community {
+}
+declare namespace Sanctum.Community {
+    interface BorrowRequirementForm {
+        Publisher: Serenity.IntegerEditor;
+        BookName: Serenity.StringEditor;
+        BookCategory: Serenity.StringEditor;
+        IsPaid: Serenity.BooleanEditor;
+        Status: Serenity.IntegerEditor;
+        ViewCount: Serenity.IntegerEditor;
+        PublishTime: Serenity.DateEditor;
+    }
+    class BorrowRequirementForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace Sanctum.Community {
+    interface BorrowRequirementRow {
+        Id?: number;
+        Publisher?: number;
+        BookName?: string;
+        BookCategory?: string;
+        IsPaid?: boolean;
+        Status?: number;
+        ViewCount?: number;
+        PublishTime?: string;
+    }
+    namespace BorrowRequirementRow {
+        const idProperty = "Id";
+        const nameProperty = "BookName";
+        const localTextPrefix = "Community.BorrowRequirement";
+        const enum Fields {
+            Id = "Id",
+            Publisher = "Publisher",
+            BookName = "BookName",
+            BookCategory = "BookCategory",
+            IsPaid = "IsPaid",
+            Status = "Status",
+            ViewCount = "ViewCount",
+            PublishTime = "PublishTime",
+        }
+    }
+}
+declare namespace Sanctum.Community {
+    namespace BorrowRequirementService {
+        const baseUrl = "Community/BorrowRequirement";
+        function Create(request: Serenity.SaveRequest<BorrowRequirementRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<BorrowRequirementRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<BorrowRequirementRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<BorrowRequirementRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Community/BorrowRequirement/Create",
+            Update = "Community/BorrowRequirement/Update",
+            Delete = "Community/BorrowRequirement/Delete",
+            Retrieve = "Community/BorrowRequirement/Retrieve",
+            List = "Community/BorrowRequirement/List",
+        }
+    }
+}
+declare namespace Sanctum.Community {
+}
+declare namespace Sanctum.Community {
+    interface DonationRecordForm {
+        DonateUserId: Serenity.IntegerEditor;
+        DonatedTime: Serenity.DateEditor;
+        BookId: Serenity.IntegerEditor;
+        DonationStyle: Serenity.IntegerEditor;
+        Comment: Serenity.StringEditor;
+        IsReceived: Serenity.BooleanEditor;
+        Receiver: Serenity.StringEditor;
+        Charger: Serenity.StringEditor;
+        ReceivedTime: Serenity.DateEditor;
+    }
+    class DonationRecordForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace Sanctum.Community {
+    interface DonationRecordRow {
+        Id?: number;
+        DonateUserId?: number;
+        DonatedTime?: string;
+        BookId?: number;
+        DonationStyle?: number;
+        Comment?: string;
+        IsReceived?: boolean;
+        Receiver?: string;
+        Charger?: string;
+        ReceivedTime?: string;
+    }
+    namespace DonationRecordRow {
+        const idProperty = "Id";
+        const nameProperty = "Comment";
+        const localTextPrefix = "Community.DonationRecord";
+        const enum Fields {
+            Id = "Id",
+            DonateUserId = "DonateUserId",
+            DonatedTime = "DonatedTime",
+            BookId = "BookId",
+            DonationStyle = "DonationStyle",
+            Comment = "Comment",
+            IsReceived = "IsReceived",
+            Receiver = "Receiver",
+            Charger = "Charger",
+            ReceivedTime = "ReceivedTime",
+        }
+    }
+}
+declare namespace Sanctum.Community {
+    namespace DonationRecordService {
+        const baseUrl = "Community/DonationRecord";
+        function Create(request: Serenity.SaveRequest<DonationRecordRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<DonationRecordRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<DonationRecordRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<DonationRecordRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Community/DonationRecord/Create",
+            Update = "Community/DonationRecord/Update",
+            Delete = "Community/DonationRecord/Delete",
+            Retrieve = "Community/DonationRecord/Retrieve",
+            List = "Community/DonationRecord/List",
+        }
+    }
+}
+declare namespace Sanctum.Community {
+}
+declare namespace Sanctum.Community {
+    interface PersonalityAnalysisForm {
+        FeatureName: Serenity.StringEditor;
+        FeatureDecription: Serenity.StringEditor;
+        MatchCategories: Serenity.StringEditor;
+        Creator: Serenity.IntegerEditor;
+        CreatedTime: Serenity.DateEditor;
+        Modifier: Serenity.IntegerEditor;
+        ModifiedTime: Serenity.DateEditor;
+    }
+    class PersonalityAnalysisForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace Sanctum.Community {
+    interface PersonalityAnalysisRow {
+        Id?: number;
+        FeatureName?: string;
+        FeatureDecription?: string;
+        MatchCategories?: string;
+        Creator?: number;
+        CreatedTime?: string;
+        Modifier?: number;
+        ModifiedTime?: string;
+    }
+    namespace PersonalityAnalysisRow {
+        const idProperty = "Id";
+        const nameProperty = "FeatureName";
+        const localTextPrefix = "Community.PersonalityAnalysis";
+        const enum Fields {
+            Id = "Id",
+            FeatureName = "FeatureName",
+            FeatureDecription = "FeatureDecription",
+            MatchCategories = "MatchCategories",
+            Creator = "Creator",
+            CreatedTime = "CreatedTime",
+            Modifier = "Modifier",
+            ModifiedTime = "ModifiedTime",
+        }
+    }
+}
+declare namespace Sanctum.Community {
+    namespace PersonalityAnalysisService {
+        const baseUrl = "Community/PersonalityAnalysis";
+        function Create(request: Serenity.SaveRequest<PersonalityAnalysisRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<PersonalityAnalysisRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<PersonalityAnalysisRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<PersonalityAnalysisRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Community/PersonalityAnalysis/Create",
+            Update = "Community/PersonalityAnalysis/Update",
+            Delete = "Community/PersonalityAnalysis/Delete",
+            Retrieve = "Community/PersonalityAnalysis/Retrieve",
+            List = "Community/PersonalityAnalysis/List",
+        }
+    }
+}
+declare namespace Sanctum.Community {
+}
+declare namespace Sanctum.Community {
+    interface PrivateBookForm {
+        BookName: Serenity.StringEditor;
+        BookCategories: Serenity.StringEditor;
+        Author: Serenity.StringEditor;
+        Price: Serenity.DecimalEditor;
+        Publisher: Serenity.StringEditor;
+        CoverImage: Serenity.StringEditor;
+        RecommendLevel: Serenity.DecimalEditor;
+        Insight: Serenity.StringEditor;
+        Summary: Serenity.StringEditor;
+        NeedPaid: Serenity.BooleanEditor;
+        BookshelfId: Serenity.IntegerEditor;
+        OffShelves: Serenity.BooleanEditor;
+        Status: Serenity.IntegerEditor;
+        Uploader: Serenity.IntegerEditor;
+        UploadTime: Serenity.DateEditor;
+    }
+    class PrivateBookForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace Sanctum.Community {
+    interface PrivateBookRow {
+        Id?: number;
+        BookName?: string;
+        BookCategories?: string;
+        Author?: string;
+        Price?: number;
+        Publisher?: string;
+        CoverImage?: string;
+        RecommendLevel?: number;
+        Insight?: string;
+        Summary?: string;
+        NeedPaid?: boolean;
+        BookshelfId?: number;
+        OffShelves?: boolean;
+        Status?: number;
+        Uploader?: number;
+        UploadTime?: string;
+    }
+    namespace PrivateBookRow {
+        const idProperty = "Id";
+        const nameProperty = "BookName";
+        const localTextPrefix = "Community.PrivateBook";
+        const enum Fields {
+            Id = "Id",
+            BookName = "BookName",
+            BookCategories = "BookCategories",
+            Author = "Author",
+            Price = "Price",
+            Publisher = "Publisher",
+            CoverImage = "CoverImage",
+            RecommendLevel = "RecommendLevel",
+            Insight = "Insight",
+            Summary = "Summary",
+            NeedPaid = "NeedPaid",
+            BookshelfId = "BookshelfId",
+            OffShelves = "OffShelves",
+            Status = "Status",
+            Uploader = "Uploader",
+            UploadTime = "UploadTime",
+        }
+    }
+}
+declare namespace Sanctum.Community {
+    namespace PrivateBookService {
+        const baseUrl = "Community/PrivateBook";
+        function Create(request: Serenity.SaveRequest<PrivateBookRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<PrivateBookRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<PrivateBookRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<PrivateBookRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Community/PrivateBook/Create",
+            Update = "Community/PrivateBook/Update",
+            Delete = "Community/PrivateBook/Delete",
+            Retrieve = "Community/PrivateBook/Retrieve",
+            List = "Community/PrivateBook/List",
+        }
+    }
+}
+declare namespace Sanctum.Community {
+}
+declare namespace Sanctum.Community {
+    interface RecommendBookForm {
+        BookName: Serenity.StringEditor;
+        BookCategory: Serenity.StringEditor;
+        Author: Serenity.StringEditor;
+        Exponent: Serenity.DecimalEditor;
+        BookRemark: Serenity.StringEditor;
+        Instroduction: Serenity.StringEditor;
+        ViewCount: Serenity.IntegerEditor;
+        HeatLevel: Serenity.DecimalEditor;
+        Referrer: Serenity.IntegerEditor;
+        ReferTime: Serenity.DateEditor;
+    }
+    class RecommendBookForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace Sanctum.Community {
+    interface RecommendBookRow {
+        Id?: number;
+        BookName?: string;
+        BookCategory?: string;
+        Author?: string;
+        Exponent?: number;
+        BookRemark?: string;
+        Instroduction?: string;
+        ViewCount?: number;
+        HeatLevel?: number;
+        Referrer?: number;
+        ReferTime?: string;
+    }
+    namespace RecommendBookRow {
+        const idProperty = "Id";
+        const nameProperty = "BookName";
+        const localTextPrefix = "Community.RecommendBook";
+        const enum Fields {
+            Id = "Id",
+            BookName = "BookName",
+            BookCategory = "BookCategory",
+            Author = "Author",
+            Exponent = "Exponent",
+            BookRemark = "BookRemark",
+            Instroduction = "Instroduction",
+            ViewCount = "ViewCount",
+            HeatLevel = "HeatLevel",
+            Referrer = "Referrer",
+            ReferTime = "ReferTime",
+        }
+    }
+}
+declare namespace Sanctum.Community {
+    namespace RecommendBookService {
+        const baseUrl = "Community/RecommendBook";
+        function Create(request: Serenity.SaveRequest<RecommendBookRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<RecommendBookRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<RecommendBookRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<RecommendBookRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Community/RecommendBook/Create",
+            Update = "Community/RecommendBook/Update",
+            Delete = "Community/RecommendBook/Delete",
+            Retrieve = "Community/RecommendBook/Retrieve",
+            List = "Community/RecommendBook/List",
+        }
+    }
+}
+declare namespace Sanctum.Community {
+}
+declare namespace Sanctum.Community {
+    interface WeiXinUserForm {
+        OpenId: Serenity.StringEditor;
+        NickName: Serenity.StringEditor;
+        Country: Serenity.StringEditor;
+        Province: Serenity.StringEditor;
+        City: Serenity.StringEditor;
+        HeaderImage: Serenity.StringEditor;
+        Mobile: Serenity.StringEditor;
+        Address: Serenity.StringEditor;
+        HonourRank: Serenity.DecimalEditor;
+        KnowledgeRank: Serenity.DecimalEditor;
+        PersonalityEval: Serenity.StringEditor;
+        HobbyCategory: Serenity.StringEditor;
+        ActiveLongitude: Serenity.DecimalEditor;
+        ActiveLatitude: Serenity.DecimalEditor;
+        LastActiveTime: Serenity.DateEditor;
+    }
+    class WeiXinUserForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace Sanctum.Community {
+    interface WeiXinUserRow {
+        Id?: number;
+        OpenId?: string;
+        NickName?: string;
+        Country?: string;
+        Province?: string;
+        City?: string;
+        HeaderImage?: string;
+        Mobile?: string;
+        Address?: string;
+        HonourRank?: number;
+        KnowledgeRank?: number;
+        PersonalityEval?: string;
+        HobbyCategory?: string;
+        ActiveLongitude?: number;
+        ActiveLatitude?: number;
+        LastActiveTime?: string;
+    }
+    namespace WeiXinUserRow {
+        const idProperty = "Id";
+        const nameProperty = "OpenId";
+        const localTextPrefix = "Community.WeiXinUser";
+        const enum Fields {
+            Id = "Id",
+            OpenId = "OpenId",
+            NickName = "NickName",
+            Country = "Country",
+            Province = "Province",
+            City = "City",
+            HeaderImage = "HeaderImage",
+            Mobile = "Mobile",
+            Address = "Address",
+            HonourRank = "HonourRank",
+            KnowledgeRank = "KnowledgeRank",
+            PersonalityEval = "PersonalityEval",
+            HobbyCategory = "HobbyCategory",
+            ActiveLongitude = "ActiveLongitude",
+            ActiveLatitude = "ActiveLatitude",
+            LastActiveTime = "LastActiveTime",
+        }
+    }
+}
+declare namespace Sanctum.Community {
+    namespace WeiXinUserService {
+        const baseUrl = "Community/WeiXinUser";
+        function Create(request: Serenity.SaveRequest<WeiXinUserRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<WeiXinUserRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<WeiXinUserRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<WeiXinUserRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Community/WeiXinUser/Create",
+            Update = "Community/WeiXinUser/Update",
+            Delete = "Community/WeiXinUser/Delete",
+            Retrieve = "Community/WeiXinUser/Retrieve",
+            List = "Community/WeiXinUser/List",
+        }
     }
 }
 declare namespace Sanctum {
@@ -778,1141 +1504,6 @@ declare namespace Sanctum.Membership {
         DisplayName?: string;
         Email?: string;
         Password?: string;
-    }
-}
-declare namespace Sanctum.Northwind {
-}
-declare namespace Sanctum.Northwind {
-    interface CategoryForm {
-        CategoryName: Serenity.StringEditor;
-        Description: Serenity.StringEditor;
-    }
-    class CategoryForm extends Serenity.PrefixedContext {
-        static formKey: string;
-        private static init;
-        constructor(prefix: string);
-    }
-}
-declare namespace Sanctum.Northwind {
-    interface CategoryLangRow {
-        Id?: number;
-        CategoryId?: number;
-        LanguageId?: number;
-        CategoryName?: string;
-        Description?: string;
-    }
-    namespace CategoryLangRow {
-        const idProperty = "Id";
-        const nameProperty = "CategoryName";
-        const localTextPrefix = "Northwind.CategoryLang";
-        const enum Fields {
-            Id = "Id",
-            CategoryId = "CategoryId",
-            LanguageId = "LanguageId",
-            CategoryName = "CategoryName",
-            Description = "Description",
-        }
-    }
-}
-declare namespace Sanctum.Northwind {
-    namespace CategoryLangService {
-        const baseUrl = "Northwind/CategoryLang";
-        function Create(request: Serenity.SaveRequest<CategoryLangRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Update(request: Serenity.SaveRequest<CategoryLangRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<CategoryLangRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<CategoryLangRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        const enum Methods {
-            Create = "Northwind/CategoryLang/Create",
-            Update = "Northwind/CategoryLang/Update",
-            Delete = "Northwind/CategoryLang/Delete",
-            Retrieve = "Northwind/CategoryLang/Retrieve",
-            List = "Northwind/CategoryLang/List",
-        }
-    }
-}
-declare namespace Sanctum.Northwind {
-    interface CategoryRow {
-        CategoryID?: number;
-        CategoryName?: string;
-        Description?: string;
-        Picture?: number[];
-    }
-    namespace CategoryRow {
-        const idProperty = "CategoryID";
-        const nameProperty = "CategoryName";
-        const localTextPrefix = "Northwind.Category";
-        const lookupKey = "Northwind.Category";
-        function getLookup(): Q.Lookup<CategoryRow>;
-        const enum Fields {
-            CategoryID = "CategoryID",
-            CategoryName = "CategoryName",
-            Description = "Description",
-            Picture = "Picture",
-        }
-    }
-}
-declare namespace Sanctum.Northwind {
-    namespace CategoryService {
-        const baseUrl = "Northwind/Category";
-        function Create(request: Serenity.SaveRequest<CategoryRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Update(request: Serenity.SaveRequest<CategoryRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<CategoryRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<CategoryRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        const enum Methods {
-            Create = "Northwind/Category/Create",
-            Update = "Northwind/Category/Update",
-            Delete = "Northwind/Category/Delete",
-            Retrieve = "Northwind/Category/Retrieve",
-            List = "Northwind/Category/List",
-        }
-    }
-}
-declare namespace Sanctum.Northwind {
-}
-declare namespace Sanctum.Northwind {
-    interface CustomerCustomerDemoRow {
-        ID?: number;
-        CustomerID?: string;
-        CustomerTypeID?: string;
-        CustomerCompanyName?: string;
-        CustomerContactName?: string;
-        CustomerContactTitle?: string;
-        CustomerAddress?: string;
-        CustomerCity?: string;
-        CustomerRegion?: string;
-        CustomerPostalCode?: string;
-        CustomerCountry?: string;
-        CustomerPhone?: string;
-        CustomerFax?: string;
-        CustomerTypeCustomerDesc?: string;
-    }
-    namespace CustomerCustomerDemoRow {
-        const idProperty = "ID";
-        const nameProperty = "CustomerID";
-        const localTextPrefix = "Northwind.CustomerCustomerDemo";
-        const enum Fields {
-            ID = "ID",
-            CustomerID = "CustomerID",
-            CustomerTypeID = "CustomerTypeID",
-            CustomerCompanyName = "CustomerCompanyName",
-            CustomerContactName = "CustomerContactName",
-            CustomerContactTitle = "CustomerContactTitle",
-            CustomerAddress = "CustomerAddress",
-            CustomerCity = "CustomerCity",
-            CustomerRegion = "CustomerRegion",
-            CustomerPostalCode = "CustomerPostalCode",
-            CustomerCountry = "CustomerCountry",
-            CustomerPhone = "CustomerPhone",
-            CustomerFax = "CustomerFax",
-            CustomerTypeCustomerDesc = "CustomerTypeCustomerDesc",
-        }
-    }
-}
-declare namespace Sanctum.Northwind {
-    interface CustomerDemographicRow {
-        ID?: number;
-        CustomerTypeID?: string;
-        CustomerDesc?: string;
-    }
-    namespace CustomerDemographicRow {
-        const idProperty = "ID";
-        const nameProperty = "CustomerTypeID";
-        const localTextPrefix = "Northwind.CustomerDemographic";
-        const enum Fields {
-            ID = "ID",
-            CustomerTypeID = "CustomerTypeID",
-            CustomerDesc = "CustomerDesc",
-        }
-    }
-}
-declare namespace Sanctum.Northwind {
-    interface CustomerDetailsRow {
-        Id?: number;
-        LastContactDate?: string;
-        LastContactedBy?: number;
-        Email?: string;
-        SendBulletin?: boolean;
-        LastContactedByLastName?: string;
-        LastContactedByFirstName?: string;
-        LastContactedByTitle?: string;
-        LastContactedByTitleOfCourtesy?: string;
-        LastContactedByBirthDate?: string;
-        LastContactedByHireDate?: string;
-        LastContactedByAddress?: string;
-        LastContactedByCity?: string;
-        LastContactedByRegion?: string;
-        LastContactedByPostalCode?: string;
-        LastContactedByCountry?: string;
-        LastContactedByHomePhone?: string;
-        LastContactedByExtension?: string;
-        LastContactedByPhoto?: number[];
-        LastContactedByNotes?: string;
-        LastContactedByReportsTo?: number;
-        LastContactedByPhotoPath?: string;
-    }
-    namespace CustomerDetailsRow {
-        const idProperty = "Id";
-        const nameProperty = "Email";
-        const localTextPrefix = "Northwind.CustomerDetails";
-        const enum Fields {
-            Id = "Id",
-            LastContactDate = "LastContactDate",
-            LastContactedBy = "LastContactedBy",
-            Email = "Email",
-            SendBulletin = "SendBulletin",
-            LastContactedByLastName = "LastContactedByLastName",
-            LastContactedByFirstName = "LastContactedByFirstName",
-            LastContactedByTitle = "LastContactedByTitle",
-            LastContactedByTitleOfCourtesy = "LastContactedByTitleOfCourtesy",
-            LastContactedByBirthDate = "LastContactedByBirthDate",
-            LastContactedByHireDate = "LastContactedByHireDate",
-            LastContactedByAddress = "LastContactedByAddress",
-            LastContactedByCity = "LastContactedByCity",
-            LastContactedByRegion = "LastContactedByRegion",
-            LastContactedByPostalCode = "LastContactedByPostalCode",
-            LastContactedByCountry = "LastContactedByCountry",
-            LastContactedByHomePhone = "LastContactedByHomePhone",
-            LastContactedByExtension = "LastContactedByExtension",
-            LastContactedByPhoto = "LastContactedByPhoto",
-            LastContactedByNotes = "LastContactedByNotes",
-            LastContactedByReportsTo = "LastContactedByReportsTo",
-            LastContactedByPhotoPath = "LastContactedByPhotoPath",
-        }
-    }
-}
-declare namespace Sanctum.Northwind {
-    interface CustomerForm {
-        CustomerID: Serenity.StringEditor;
-        CompanyName: Serenity.StringEditor;
-        ContactName: Serenity.StringEditor;
-        ContactTitle: Serenity.StringEditor;
-        Representatives: Serenity.LookupEditor;
-        Address: Serenity.StringEditor;
-        Country: Serenity.LookupEditor;
-        City: Serenity.LookupEditor;
-        Region: Serenity.StringEditor;
-        PostalCode: Serenity.StringEditor;
-        Phone: Serenity.StringEditor;
-        Fax: Serenity.StringEditor;
-        NoteList: NotesEditor;
-        LastContactDate: Serenity.DateEditor;
-        LastContactedBy: Serenity.LookupEditor;
-        Email: Serenity.EmailEditor;
-        SendBulletin: Serenity.BooleanEditor;
-    }
-    class CustomerForm extends Serenity.PrefixedContext {
-        static formKey: string;
-        private static init;
-        constructor(prefix: string);
-    }
-}
-declare namespace Sanctum.Northwind {
-    interface CustomerGrossSalesRow {
-        CustomerId?: string;
-        ContactName?: string;
-        ProductId?: number;
-        ProductName?: string;
-        GrossAmount?: number;
-    }
-    namespace CustomerGrossSalesRow {
-        const nameProperty = "ContactName";
-        const localTextPrefix = "Northwind.CustomerGrossSales";
-        const enum Fields {
-            CustomerId = "CustomerId",
-            ContactName = "ContactName",
-            ProductId = "ProductId",
-            ProductName = "ProductName",
-            GrossAmount = "GrossAmount",
-        }
-    }
-}
-declare namespace Sanctum.Northwind {
-    interface CustomerRepresentativesRow {
-        RepresentativeId?: number;
-        CustomerId?: number;
-        EmployeeId?: number;
-    }
-    namespace CustomerRepresentativesRow {
-        const idProperty = "RepresentativeId";
-        const localTextPrefix = "Northwind.CustomerRepresentatives";
-        const enum Fields {
-            RepresentativeId = "RepresentativeId",
-            CustomerId = "CustomerId",
-            EmployeeId = "EmployeeId",
-        }
-    }
-}
-declare namespace Sanctum.Northwind {
-    interface CustomerRow {
-        ID?: number;
-        CustomerID?: string;
-        CompanyName?: string;
-        ContactName?: string;
-        ContactTitle?: string;
-        Address?: string;
-        City?: string;
-        Region?: string;
-        PostalCode?: string;
-        Country?: string;
-        Phone?: string;
-        Fax?: string;
-        NoteList?: NoteRow[];
-        Representatives?: number[];
-        LastContactDate?: string;
-        LastContactedBy?: number;
-        Email?: string;
-        SendBulletin?: boolean;
-    }
-    namespace CustomerRow {
-        const idProperty = "ID";
-        const nameProperty = "CompanyName";
-        const localTextPrefix = "Northwind.Customer";
-        const lookupKey = "Northwind.Customer";
-        function getLookup(): Q.Lookup<CustomerRow>;
-        const enum Fields {
-            ID = "ID",
-            CustomerID = "CustomerID",
-            CompanyName = "CompanyName",
-            ContactName = "ContactName",
-            ContactTitle = "ContactTitle",
-            Address = "Address",
-            City = "City",
-            Region = "Region",
-            PostalCode = "PostalCode",
-            Country = "Country",
-            Phone = "Phone",
-            Fax = "Fax",
-            NoteList = "NoteList",
-            Representatives = "Representatives",
-            LastContactDate = "LastContactDate",
-            LastContactedBy = "LastContactedBy",
-            Email = "Email",
-            SendBulletin = "SendBulletin",
-        }
-    }
-}
-declare namespace Sanctum.Northwind {
-    namespace CustomerService {
-        const baseUrl = "Northwind/Customer";
-        function Create(request: Serenity.SaveRequest<CustomerRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Update(request: Serenity.SaveRequest<CustomerRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function GetNextNumber(request: GetNextNumberRequest, onSuccess?: (response: GetNextNumberResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<CustomerRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<CustomerRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        const enum Methods {
-            Create = "Northwind/Customer/Create",
-            Update = "Northwind/Customer/Update",
-            Delete = "Northwind/Customer/Delete",
-            GetNextNumber = "Northwind/Customer/GetNextNumber",
-            Retrieve = "Northwind/Customer/Retrieve",
-            List = "Northwind/Customer/List",
-        }
-    }
-}
-declare namespace Sanctum.Northwind {
-    interface EmployeeRow {
-        EmployeeID?: number;
-        LastName?: string;
-        FirstName?: string;
-        FullName?: string;
-        Title?: string;
-        TitleOfCourtesy?: string;
-        BirthDate?: string;
-        HireDate?: string;
-        Address?: string;
-        City?: string;
-        Region?: string;
-        PostalCode?: string;
-        Country?: string;
-        HomePhone?: string;
-        Extension?: string;
-        Photo?: number[];
-        Notes?: string;
-        ReportsTo?: number;
-        PhotoPath?: string;
-        ReportsToFullName?: string;
-        ReportsToLastName?: string;
-        ReportsToFirstName?: string;
-        ReportsToTitle?: string;
-        ReportsToTitleOfCourtesy?: string;
-        ReportsToBirthDate?: string;
-        ReportsToHireDate?: string;
-        ReportsToAddress?: string;
-        ReportsToCity?: string;
-        ReportsToRegion?: string;
-        ReportsToPostalCode?: string;
-        ReportsToCountry?: string;
-        ReportsToHomePhone?: string;
-        ReportsToExtension?: string;
-        ReportsToPhoto?: number[];
-        ReportsToNotes?: string;
-        ReportsToReportsTo?: number;
-        ReportsToPhotoPath?: string;
-        Gender?: Gender;
-    }
-    namespace EmployeeRow {
-        const idProperty = "EmployeeID";
-        const nameProperty = "FullName";
-        const localTextPrefix = "Northwind.Employee";
-        const lookupKey = "Northwind.Employee";
-        function getLookup(): Q.Lookup<EmployeeRow>;
-        const enum Fields {
-            EmployeeID = "EmployeeID",
-            LastName = "LastName",
-            FirstName = "FirstName",
-            FullName = "FullName",
-            Title = "Title",
-            TitleOfCourtesy = "TitleOfCourtesy",
-            BirthDate = "BirthDate",
-            HireDate = "HireDate",
-            Address = "Address",
-            City = "City",
-            Region = "Region",
-            PostalCode = "PostalCode",
-            Country = "Country",
-            HomePhone = "HomePhone",
-            Extension = "Extension",
-            Photo = "Photo",
-            Notes = "Notes",
-            ReportsTo = "ReportsTo",
-            PhotoPath = "PhotoPath",
-            ReportsToFullName = "ReportsToFullName",
-            ReportsToLastName = "ReportsToLastName",
-            ReportsToFirstName = "ReportsToFirstName",
-            ReportsToTitle = "ReportsToTitle",
-            ReportsToTitleOfCourtesy = "ReportsToTitleOfCourtesy",
-            ReportsToBirthDate = "ReportsToBirthDate",
-            ReportsToHireDate = "ReportsToHireDate",
-            ReportsToAddress = "ReportsToAddress",
-            ReportsToCity = "ReportsToCity",
-            ReportsToRegion = "ReportsToRegion",
-            ReportsToPostalCode = "ReportsToPostalCode",
-            ReportsToCountry = "ReportsToCountry",
-            ReportsToHomePhone = "ReportsToHomePhone",
-            ReportsToExtension = "ReportsToExtension",
-            ReportsToPhoto = "ReportsToPhoto",
-            ReportsToNotes = "ReportsToNotes",
-            ReportsToReportsTo = "ReportsToReportsTo",
-            ReportsToPhotoPath = "ReportsToPhotoPath",
-            Gender = "Gender",
-        }
-    }
-}
-declare namespace Sanctum.Northwind {
-    interface EmployeeTerritoryRow {
-        EmployeeID?: number;
-        TerritoryID?: string;
-        EmployeeLastName?: string;
-        EmployeeFirstName?: string;
-        EmployeeTitle?: string;
-        EmployeeTitleOfCourtesy?: string;
-        EmployeeBirthDate?: string;
-        EmployeeHireDate?: string;
-        EmployeeAddress?: string;
-        EmployeeCity?: string;
-        EmployeeRegion?: string;
-        EmployeePostalCode?: string;
-        EmployeeCountry?: string;
-        EmployeeHomePhone?: string;
-        EmployeeExtension?: string;
-        EmployeePhoto?: number[];
-        EmployeeNotes?: string;
-        EmployeeReportsTo?: number;
-        EmployeePhotoPath?: string;
-        TerritoryTerritoryDescription?: string;
-        TerritoryRegionID?: number;
-    }
-    namespace EmployeeTerritoryRow {
-        const idProperty = "EmployeeID";
-        const nameProperty = "TerritoryID";
-        const localTextPrefix = "Northwind.EmployeeTerritory";
-        const enum Fields {
-            EmployeeID = "EmployeeID",
-            TerritoryID = "TerritoryID",
-            EmployeeLastName = "EmployeeLastName",
-            EmployeeFirstName = "EmployeeFirstName",
-            EmployeeTitle = "EmployeeTitle",
-            EmployeeTitleOfCourtesy = "EmployeeTitleOfCourtesy",
-            EmployeeBirthDate = "EmployeeBirthDate",
-            EmployeeHireDate = "EmployeeHireDate",
-            EmployeeAddress = "EmployeeAddress",
-            EmployeeCity = "EmployeeCity",
-            EmployeeRegion = "EmployeeRegion",
-            EmployeePostalCode = "EmployeePostalCode",
-            EmployeeCountry = "EmployeeCountry",
-            EmployeeHomePhone = "EmployeeHomePhone",
-            EmployeeExtension = "EmployeeExtension",
-            EmployeePhoto = "EmployeePhoto",
-            EmployeeNotes = "EmployeeNotes",
-            EmployeeReportsTo = "EmployeeReportsTo",
-            EmployeePhotoPath = "EmployeePhotoPath",
-            TerritoryTerritoryDescription = "TerritoryTerritoryDescription",
-            TerritoryRegionID = "TerritoryRegionID",
-        }
-    }
-}
-declare namespace Sanctum.Northwind {
-    enum Gender {
-        Male = 1,
-        Female = 2,
-    }
-}
-declare namespace Sanctum.Northwind {
-    interface NoteRow {
-        NoteId?: number;
-        EntityType?: string;
-        EntityId?: number;
-        Text?: string;
-        InsertUserId?: number;
-        InsertDate?: string;
-        InsertUserDisplayName?: string;
-    }
-    namespace NoteRow {
-        const idProperty = "NoteId";
-        const nameProperty = "EntityType";
-        const localTextPrefix = "Northwind.Note";
-        const enum Fields {
-            NoteId = "NoteId",
-            EntityType = "EntityType",
-            EntityId = "EntityId",
-            Text = "Text",
-            InsertUserId = "InsertUserId",
-            InsertDate = "InsertDate",
-            InsertUserDisplayName = "InsertUserDisplayName",
-        }
-    }
-}
-declare namespace Sanctum.Northwind {
-}
-declare namespace Sanctum.Northwind {
-}
-declare namespace Sanctum.Northwind {
-    interface OrderDetailForm {
-        ProductID: Serenity.LookupEditor;
-        UnitPrice: Serenity.DecimalEditor;
-        Quantity: Serenity.IntegerEditor;
-        Discount: Serenity.DecimalEditor;
-    }
-    class OrderDetailForm extends Serenity.PrefixedContext {
-        static formKey: string;
-        private static init;
-        constructor(prefix: string);
-    }
-}
-declare namespace Sanctum.Northwind {
-    interface OrderDetailRow {
-        DetailID?: number;
-        OrderID?: number;
-        ProductID?: number;
-        UnitPrice?: number;
-        Quantity?: number;
-        Discount?: number;
-        OrderCustomerID?: string;
-        OrderEmployeeID?: number;
-        OrderDate?: string;
-        OrderShippedDate?: string;
-        OrderShipVia?: number;
-        OrderShipCity?: string;
-        OrderShipCountry?: string;
-        ProductName?: string;
-        ProductDiscontinued?: boolean;
-        ProductSupplierID?: number;
-        ProductQuantityPerUnit?: string;
-        ProductUnitPrice?: number;
-        LineTotal?: number;
-    }
-    namespace OrderDetailRow {
-        const idProperty = "DetailID";
-        const localTextPrefix = "Northwind.OrderDetail";
-        const enum Fields {
-            DetailID = "DetailID",
-            OrderID = "OrderID",
-            ProductID = "ProductID",
-            UnitPrice = "UnitPrice",
-            Quantity = "Quantity",
-            Discount = "Discount",
-            OrderCustomerID = "OrderCustomerID",
-            OrderEmployeeID = "OrderEmployeeID",
-            OrderDate = "OrderDate",
-            OrderShippedDate = "OrderShippedDate",
-            OrderShipVia = "OrderShipVia",
-            OrderShipCity = "OrderShipCity",
-            OrderShipCountry = "OrderShipCountry",
-            ProductName = "ProductName",
-            ProductDiscontinued = "ProductDiscontinued",
-            ProductSupplierID = "ProductSupplierID",
-            ProductQuantityPerUnit = "ProductQuantityPerUnit",
-            ProductUnitPrice = "ProductUnitPrice",
-            LineTotal = "LineTotal",
-        }
-    }
-}
-declare namespace Sanctum.Northwind {
-    namespace OrderDetailService {
-        const baseUrl = "Northwind/OrderDetail";
-        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<OrderDetailRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<OrderDetailRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        const enum Methods {
-            Retrieve = "Northwind/OrderDetail/Retrieve",
-            List = "Northwind/OrderDetail/List",
-        }
-    }
-}
-declare namespace Sanctum.Northwind {
-    interface OrderForm {
-        CustomerID: CustomerEditor;
-        OrderDate: Serenity.DateEditor;
-        RequiredDate: Serenity.DateEditor;
-        EmployeeID: Serenity.LookupEditor;
-        DetailList: OrderDetailsEditor;
-        ShippedDate: Serenity.DateEditor;
-        ShipVia: Serenity.LookupEditor;
-        Freight: Serenity.DecimalEditor;
-        ShipName: Serenity.StringEditor;
-        ShipAddress: Serenity.StringEditor;
-        ShipCity: Serenity.StringEditor;
-        ShipRegion: Serenity.StringEditor;
-        ShipPostalCode: Serenity.StringEditor;
-        ShipCountry: Serenity.StringEditor;
-    }
-    class OrderForm extends Serenity.PrefixedContext {
-        static formKey: string;
-        private static init;
-        constructor(prefix: string);
-    }
-}
-declare namespace Sanctum.Northwind {
-    interface OrderListRequest extends Serenity.ListRequest {
-        ProductID?: number;
-    }
-}
-declare namespace Sanctum.Northwind {
-    interface OrderRow {
-        OrderID?: number;
-        CustomerID?: string;
-        EmployeeID?: number;
-        OrderDate?: string;
-        RequiredDate?: string;
-        ShippedDate?: string;
-        ShipVia?: number;
-        Freight?: number;
-        ShipName?: string;
-        ShipAddress?: string;
-        ShipCity?: string;
-        ShipRegion?: string;
-        ShipPostalCode?: string;
-        ShipCountry?: string;
-        CustomerCompanyName?: string;
-        CustomerContactName?: string;
-        CustomerContactTitle?: string;
-        CustomerCity?: string;
-        CustomerRegion?: string;
-        CustomerCountry?: string;
-        CustomerPhone?: string;
-        CustomerFax?: string;
-        EmployeeFullName?: string;
-        EmployeeGender?: Gender;
-        EmployeeReportsToFullName?: string;
-        ShipViaCompanyName?: string;
-        ShipViaPhone?: string;
-        ShippingState?: OrderShippingState;
-        DetailList?: OrderDetailRow[];
-    }
-    namespace OrderRow {
-        const idProperty = "OrderID";
-        const nameProperty = "CustomerID";
-        const localTextPrefix = "Northwind.Order";
-        const enum Fields {
-            OrderID = "OrderID",
-            CustomerID = "CustomerID",
-            EmployeeID = "EmployeeID",
-            OrderDate = "OrderDate",
-            RequiredDate = "RequiredDate",
-            ShippedDate = "ShippedDate",
-            ShipVia = "ShipVia",
-            Freight = "Freight",
-            ShipName = "ShipName",
-            ShipAddress = "ShipAddress",
-            ShipCity = "ShipCity",
-            ShipRegion = "ShipRegion",
-            ShipPostalCode = "ShipPostalCode",
-            ShipCountry = "ShipCountry",
-            CustomerCompanyName = "CustomerCompanyName",
-            CustomerContactName = "CustomerContactName",
-            CustomerContactTitle = "CustomerContactTitle",
-            CustomerCity = "CustomerCity",
-            CustomerRegion = "CustomerRegion",
-            CustomerCountry = "CustomerCountry",
-            CustomerPhone = "CustomerPhone",
-            CustomerFax = "CustomerFax",
-            EmployeeFullName = "EmployeeFullName",
-            EmployeeGender = "EmployeeGender",
-            EmployeeReportsToFullName = "EmployeeReportsToFullName",
-            ShipViaCompanyName = "ShipViaCompanyName",
-            ShipViaPhone = "ShipViaPhone",
-            ShippingState = "ShippingState",
-            DetailList = "DetailList",
-        }
-    }
-}
-declare namespace Sanctum.Northwind {
-    namespace OrderService {
-        const baseUrl = "Northwind/Order";
-        function Create(request: Serenity.SaveRequest<OrderRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Update(request: Serenity.SaveRequest<OrderRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<OrderRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function List(request: OrderListRequest, onSuccess?: (response: Serenity.ListResponse<OrderRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        const enum Methods {
-            Create = "Northwind/Order/Create",
-            Update = "Northwind/Order/Update",
-            Delete = "Northwind/Order/Delete",
-            Retrieve = "Northwind/Order/Retrieve",
-            List = "Northwind/Order/List",
-        }
-    }
-}
-declare namespace Sanctum.Northwind {
-    enum OrderShippingState {
-        NotShipped = 0,
-        Shipped = 1,
-    }
-}
-declare namespace Sanctum.Northwind {
-}
-declare namespace Sanctum.Northwind {
-    interface ProductForm {
-        ProductName: Serenity.StringEditor;
-        ProductImage: Serenity.ImageUploadEditor;
-        Discontinued: Serenity.BooleanEditor;
-        SupplierID: Serenity.LookupEditor;
-        CategoryID: Serenity.LookupEditor;
-        QuantityPerUnit: Serenity.StringEditor;
-        UnitPrice: Serenity.DecimalEditor;
-        UnitsInStock: Serenity.IntegerEditor;
-        UnitsOnOrder: Serenity.IntegerEditor;
-        ReorderLevel: Serenity.IntegerEditor;
-    }
-    class ProductForm extends Serenity.PrefixedContext {
-        static formKey: string;
-        private static init;
-        constructor(prefix: string);
-    }
-}
-declare namespace Sanctum.Northwind {
-    interface ProductLangRow {
-        Id?: number;
-        ProductId?: number;
-        LanguageId?: number;
-        ProductName?: string;
-    }
-    namespace ProductLangRow {
-        const idProperty = "Id";
-        const nameProperty = "ProductName";
-        const localTextPrefix = "Northwind.ProductLang";
-        const enum Fields {
-            Id = "Id",
-            ProductId = "ProductId",
-            LanguageId = "LanguageId",
-            ProductName = "ProductName",
-        }
-    }
-}
-declare namespace Sanctum.Northwind {
-    namespace ProductLangService {
-        const baseUrl = "Northwind/ProductLang";
-        function Create(request: Serenity.SaveRequest<ProductLangRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Update(request: Serenity.SaveRequest<ProductLangRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<ProductLangRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<ProductLangRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        const enum Methods {
-            Create = "Northwind/ProductLang/Create",
-            Update = "Northwind/ProductLang/Update",
-            Delete = "Northwind/ProductLang/Delete",
-            Retrieve = "Northwind/ProductLang/Retrieve",
-            List = "Northwind/ProductLang/List",
-        }
-    }
-}
-declare namespace Sanctum.Northwind {
-    interface ProductLogRow {
-        ProductLogID?: number;
-        OperationType?: Serenity.CaptureOperationType;
-        ChangingUserId?: number;
-        ValidFrom?: string;
-        ValidUntil?: string;
-        ProductID?: number;
-        ProductName?: string;
-        ProductImage?: string;
-        Discontinued?: boolean;
-        SupplierID?: number;
-        CategoryID?: number;
-        QuantityPerUnit?: string;
-        UnitPrice?: number;
-        UnitsInStock?: number;
-        UnitsOnOrder?: number;
-        ReorderLevel?: number;
-    }
-    namespace ProductLogRow {
-        const idProperty = "ProductLogID";
-        const localTextPrefix = "Northwind.ProductLog";
-        const enum Fields {
-            ProductLogID = "ProductLogID",
-            OperationType = "OperationType",
-            ChangingUserId = "ChangingUserId",
-            ValidFrom = "ValidFrom",
-            ValidUntil = "ValidUntil",
-            ProductID = "ProductID",
-            ProductName = "ProductName",
-            ProductImage = "ProductImage",
-            Discontinued = "Discontinued",
-            SupplierID = "SupplierID",
-            CategoryID = "CategoryID",
-            QuantityPerUnit = "QuantityPerUnit",
-            UnitPrice = "UnitPrice",
-            UnitsInStock = "UnitsInStock",
-            UnitsOnOrder = "UnitsOnOrder",
-            ReorderLevel = "ReorderLevel",
-        }
-    }
-}
-declare namespace Sanctum.Northwind {
-    interface ProductRow {
-        ProductID?: number;
-        ProductName?: string;
-        ProductImage?: string;
-        Discontinued?: boolean;
-        SupplierID?: number;
-        CategoryID?: number;
-        QuantityPerUnit?: string;
-        UnitPrice?: number;
-        UnitsInStock?: number;
-        UnitsOnOrder?: number;
-        ReorderLevel?: number;
-        SupplierCompanyName?: string;
-        SupplierContactName?: string;
-        SupplierContactTitle?: string;
-        SupplierAddress?: string;
-        SupplierCity?: string;
-        SupplierRegion?: string;
-        SupplierPostalCode?: string;
-        SupplierCountry?: string;
-        SupplierPhone?: string;
-        SupplierFax?: string;
-        SupplierHomePage?: string;
-        CategoryName?: string;
-        CategoryDescription?: string;
-        CategoryPicture?: number[];
-    }
-    namespace ProductRow {
-        const idProperty = "ProductID";
-        const nameProperty = "ProductName";
-        const localTextPrefix = "Northwind.Product";
-        const lookupKey = "Northwind.Product";
-        function getLookup(): Q.Lookup<ProductRow>;
-        const enum Fields {
-            ProductID = "ProductID",
-            ProductName = "ProductName",
-            ProductImage = "ProductImage",
-            Discontinued = "Discontinued",
-            SupplierID = "SupplierID",
-            CategoryID = "CategoryID",
-            QuantityPerUnit = "QuantityPerUnit",
-            UnitPrice = "UnitPrice",
-            UnitsInStock = "UnitsInStock",
-            UnitsOnOrder = "UnitsOnOrder",
-            ReorderLevel = "ReorderLevel",
-            SupplierCompanyName = "SupplierCompanyName",
-            SupplierContactName = "SupplierContactName",
-            SupplierContactTitle = "SupplierContactTitle",
-            SupplierAddress = "SupplierAddress",
-            SupplierCity = "SupplierCity",
-            SupplierRegion = "SupplierRegion",
-            SupplierPostalCode = "SupplierPostalCode",
-            SupplierCountry = "SupplierCountry",
-            SupplierPhone = "SupplierPhone",
-            SupplierFax = "SupplierFax",
-            SupplierHomePage = "SupplierHomePage",
-            CategoryName = "CategoryName",
-            CategoryDescription = "CategoryDescription",
-            CategoryPicture = "CategoryPicture",
-        }
-    }
-}
-declare namespace Sanctum.Northwind {
-    namespace ProductService {
-        const baseUrl = "Northwind/Product";
-        function Create(request: Serenity.SaveRequest<ProductRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Update(request: Serenity.SaveRequest<ProductRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<ProductRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<ProductRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        const enum Methods {
-            Create = "Northwind/Product/Create",
-            Update = "Northwind/Product/Update",
-            Delete = "Northwind/Product/Delete",
-            Retrieve = "Northwind/Product/Retrieve",
-            List = "Northwind/Product/List",
-        }
-    }
-}
-declare namespace Sanctum.Northwind {
-}
-declare namespace Sanctum.Northwind {
-    interface RegionForm {
-        RegionID: Serenity.IntegerEditor;
-        RegionDescription: Serenity.StringEditor;
-    }
-    class RegionForm extends Serenity.PrefixedContext {
-        static formKey: string;
-        private static init;
-        constructor(prefix: string);
-    }
-}
-declare namespace Sanctum.Northwind {
-    interface RegionRow {
-        RegionID?: number;
-        RegionDescription?: string;
-    }
-    namespace RegionRow {
-        const idProperty = "RegionID";
-        const nameProperty = "RegionDescription";
-        const localTextPrefix = "Northwind.Region";
-        const lookupKey = "Northwind.Region";
-        function getLookup(): Q.Lookup<RegionRow>;
-        const enum Fields {
-            RegionID = "RegionID",
-            RegionDescription = "RegionDescription",
-        }
-    }
-}
-declare namespace Sanctum.Northwind {
-    namespace RegionService {
-        const baseUrl = "Northwind/Region";
-        function Create(request: Serenity.SaveRequest<RegionRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Update(request: Serenity.SaveRequest<RegionRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<RegionRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<RegionRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        const enum Methods {
-            Create = "Northwind/Region/Create",
-            Update = "Northwind/Region/Update",
-            Delete = "Northwind/Region/Delete",
-            Retrieve = "Northwind/Region/Retrieve",
-            List = "Northwind/Region/List",
-        }
-    }
-}
-declare namespace Sanctum.Northwind {
-}
-declare namespace Sanctum.Northwind {
-    interface SalesByCategoryRow {
-        CategoryId?: number;
-        CategoryName?: string;
-        ProductName?: string;
-        ProductSales?: number;
-    }
-    namespace SalesByCategoryRow {
-        const nameProperty = "CategoryName";
-        const localTextPrefix = "Northwind.SalesByCategory";
-        const enum Fields {
-            CategoryId = "CategoryId",
-            CategoryName = "CategoryName",
-            ProductName = "ProductName",
-            ProductSales = "ProductSales",
-        }
-    }
-}
-declare namespace Sanctum.Northwind {
-    namespace SalesByCategoryService {
-        const baseUrl = "Northwind/SalesByCategory";
-        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<SalesByCategoryRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        const enum Methods {
-            List = "Northwind/SalesByCategory/List",
-        }
-    }
-}
-declare namespace Sanctum.Northwind {
-}
-declare namespace Sanctum.Northwind {
-    interface ShipperForm {
-        CompanyName: Serenity.StringEditor;
-        Phone: PhoneEditor;
-    }
-    class ShipperForm extends Serenity.PrefixedContext {
-        static formKey: string;
-        private static init;
-        constructor(prefix: string);
-    }
-}
-declare namespace Sanctum.Northwind {
-    interface ShipperRow {
-        ShipperID?: number;
-        CompanyName?: string;
-        Phone?: string;
-    }
-    namespace ShipperRow {
-        const idProperty = "ShipperID";
-        const nameProperty = "CompanyName";
-        const localTextPrefix = "Northwind.Shipper";
-        const lookupKey = "Northwind.Shipper";
-        function getLookup(): Q.Lookup<ShipperRow>;
-        const enum Fields {
-            ShipperID = "ShipperID",
-            CompanyName = "CompanyName",
-            Phone = "Phone",
-        }
-    }
-}
-declare namespace Sanctum.Northwind {
-    namespace ShipperService {
-        const baseUrl = "Northwind/Shipper";
-        function Create(request: Serenity.SaveRequest<ShipperRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Update(request: Serenity.SaveRequest<ShipperRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<ShipperRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<ShipperRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        const enum Methods {
-            Create = "Northwind/Shipper/Create",
-            Update = "Northwind/Shipper/Update",
-            Delete = "Northwind/Shipper/Delete",
-            Retrieve = "Northwind/Shipper/Retrieve",
-            List = "Northwind/Shipper/List",
-        }
-    }
-}
-declare namespace Sanctum.Northwind {
-}
-declare namespace Sanctum.Northwind {
-    interface SupplierForm {
-        CompanyName: Serenity.StringEditor;
-        ContactName: Serenity.StringEditor;
-        ContactTitle: Serenity.StringEditor;
-        Address: Serenity.StringEditor;
-        Region: Serenity.StringEditor;
-        PostalCode: Serenity.StringEditor;
-        Country: Serenity.StringEditor;
-        City: Serenity.StringEditor;
-        Phone: Serenity.StringEditor;
-        Fax: Serenity.StringEditor;
-        HomePage: Serenity.StringEditor;
-    }
-    class SupplierForm extends Serenity.PrefixedContext {
-        static formKey: string;
-        private static init;
-        constructor(prefix: string);
-    }
-}
-declare namespace Sanctum.Northwind {
-    interface SupplierRow {
-        SupplierID?: number;
-        CompanyName?: string;
-        ContactName?: string;
-        ContactTitle?: string;
-        Address?: string;
-        City?: string;
-        Region?: string;
-        PostalCode?: string;
-        Country?: string;
-        Phone?: string;
-        Fax?: string;
-        HomePage?: string;
-    }
-    namespace SupplierRow {
-        const idProperty = "SupplierID";
-        const nameProperty = "CompanyName";
-        const localTextPrefix = "Northwind.Supplier";
-        const lookupKey = "Northwind.Supplier";
-        function getLookup(): Q.Lookup<SupplierRow>;
-        const enum Fields {
-            SupplierID = "SupplierID",
-            CompanyName = "CompanyName",
-            ContactName = "ContactName",
-            ContactTitle = "ContactTitle",
-            Address = "Address",
-            City = "City",
-            Region = "Region",
-            PostalCode = "PostalCode",
-            Country = "Country",
-            Phone = "Phone",
-            Fax = "Fax",
-            HomePage = "HomePage",
-        }
-    }
-}
-declare namespace Sanctum.Northwind {
-    namespace SupplierService {
-        const baseUrl = "Northwind/Supplier";
-        function Create(request: Serenity.SaveRequest<SupplierRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Update(request: Serenity.SaveRequest<SupplierRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<SupplierRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<SupplierRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        const enum Methods {
-            Create = "Northwind/Supplier/Create",
-            Update = "Northwind/Supplier/Update",
-            Delete = "Northwind/Supplier/Delete",
-            Retrieve = "Northwind/Supplier/Retrieve",
-            List = "Northwind/Supplier/List",
-        }
-    }
-}
-declare namespace Sanctum.Northwind {
-}
-declare namespace Sanctum.Northwind {
-    interface TerritoryForm {
-        TerritoryID: Serenity.StringEditor;
-        TerritoryDescription: Serenity.StringEditor;
-        RegionID: Serenity.LookupEditor;
-    }
-    class TerritoryForm extends Serenity.PrefixedContext {
-        static formKey: string;
-        private static init;
-        constructor(prefix: string);
-    }
-}
-declare namespace Sanctum.Northwind {
-    interface TerritoryRow {
-        ID?: number;
-        TerritoryID?: string;
-        TerritoryDescription?: string;
-        RegionID?: number;
-        RegionDescription?: string;
-    }
-    namespace TerritoryRow {
-        const idProperty = "ID";
-        const nameProperty = "TerritoryID";
-        const localTextPrefix = "Northwind.Territory";
-        const lookupKey = "Northwind.Territory";
-        function getLookup(): Q.Lookup<TerritoryRow>;
-        const enum Fields {
-            ID = "ID",
-            TerritoryID = "TerritoryID",
-            TerritoryDescription = "TerritoryDescription",
-            RegionID = "RegionID",
-            RegionDescription = "RegionDescription",
-        }
-    }
-}
-declare namespace Sanctum.Northwind {
-    namespace TerritoryService {
-        const baseUrl = "Northwind/Territory";
-        function Create(request: Serenity.SaveRequest<TerritoryRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Update(request: Serenity.SaveRequest<TerritoryRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<TerritoryRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<TerritoryRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        const enum Methods {
-            Create = "Northwind/Territory/Create",
-            Update = "Northwind/Territory/Update",
-            Delete = "Northwind/Territory/Delete",
-            Retrieve = "Northwind/Territory/Retrieve",
-            List = "Northwind/Territory/List",
-        }
     }
 }
 declare namespace Sanctum {
@@ -2349,311 +1940,278 @@ declare namespace Sanctum.Common {
         setItem(key: string, data: string): void;
     }
 }
-declare namespace Sanctum.Northwind {
-    class CategoryDialog extends Serenity.EntityDialog<CategoryRow, any> {
+declare namespace Sanctum.Community {
+    class AreaDialog extends Serenity.EntityDialog<AreaRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
         protected getNameProperty(): string;
         protected getService(): string;
-        protected form: CategoryForm;
+        protected form: AreaForm;
     }
 }
-declare namespace Sanctum.Northwind {
-    class CategoryGrid extends Serenity.EntityGrid<CategoryRow, any> {
+declare namespace Sanctum.Community {
+    class AreaGrid extends Serenity.EntityGrid<AreaRow, any> {
         protected getColumnsKey(): string;
-        protected getDialogType(): any;
+        protected getDialogType(): typeof AreaDialog;
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
     }
 }
-declare namespace Sanctum.Northwind {
-    class CustomerDialog extends Serenity.EntityDialog<CustomerRow, any> {
+declare namespace Sanctum.Community {
+    class BookCategoryDialog extends Serenity.EntityDialog<BookCategoryRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
         protected getNameProperty(): string;
         protected getService(): string;
-        protected form: CustomerForm;
-        private ordersGrid;
-        private loadedState;
-        constructor();
-        getSaveState(): string;
-        loadResponse(data: any): void;
-        loadEntity(entity: CustomerRow): void;
-        onSaveSuccess(response: any): void;
+        protected form: BookCategoryForm;
     }
 }
-declare namespace Sanctum.Northwind {
-    class CustomerEditor extends Serenity.LookupEditorBase<Serenity.LookupEditorOptions, CustomerRow> {
-        constructor(hidden: JQuery);
-        protected getLookupKey(): string;
-        protected getItemText(item: any, lookup: any): string;
-    }
-}
-declare namespace Sanctum.Northwind {
-    class CustomerGrid extends Serenity.EntityGrid<CustomerRow, any> {
+declare namespace Sanctum.Community {
+    class BookCategoryGrid extends Serenity.EntityGrid<BookCategoryRow, any> {
         protected getColumnsKey(): string;
-        protected getDialogType(): any;
+        protected getDialogType(): typeof BookCategoryDialog;
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
-        getButtons(): Serenity.ToolButton[];
     }
 }
-declare namespace Sanctum.Northwind {
-    class OrderDialog extends Serenity.EntityDialog<OrderRow, any> {
+declare namespace Sanctum.Community {
+    class BookCommentDialog extends Serenity.EntityDialog<BookCommentRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
         protected getNameProperty(): string;
         protected getService(): string;
-        protected form: OrderForm;
-        constructor();
-        getToolbarButtons(): Serenity.ToolButton[];
-        protected updateInterface(): void;
+        protected form: BookCommentForm;
     }
 }
-declare namespace Sanctum.Northwind {
-    class CustomerOrderDialog extends OrderDialog {
-        constructor();
-        updateInterface(): void;
-    }
-}
-declare namespace Sanctum.Northwind {
-    class OrderGrid extends Serenity.EntityGrid<OrderRow, any> {
+declare namespace Sanctum.Community {
+    class BookCommentGrid extends Serenity.EntityGrid<BookCommentRow, any> {
         protected getColumnsKey(): string;
-        protected getDialogType(): any;
+        protected getDialogType(): typeof BookCommentDialog;
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
         protected getService(): string;
-        protected shippingStateFilter: Serenity.EnumEditor;
         constructor(container: JQuery);
-        protected getQuickFilters(): Serenity.QuickFilter<Serenity.Widget<any>, any>[];
-        protected createQuickFilters(): void;
-        protected getButtons(): Serenity.ToolButton[];
-        protected getColumns(): Slick.Column[];
-        protected onClick(e: JQueryEventObject, row: number, cell: number): void;
-        set_shippingState(value: number): void;
-        protected addButtonClick(): void;
     }
 }
-declare namespace Sanctum.Northwind {
-    class CustomerOrdersGrid extends OrderGrid {
-        protected getDialogType(): typeof CustomerOrderDialog;
-        constructor(container: JQuery);
-        protected getColumns(): Slick.Column[];
-        protected initEntityDialog(itemType: any, dialog: any): void;
-        protected addButtonClick(): void;
-        protected getInitialTitle(): any;
-        protected getGridCanLoad(): boolean;
-        private _customerID;
-        customerID: string;
-    }
-}
-declare namespace Sanctum.Northwind {
-    class EmployeeListFormatter implements Slick.Formatter {
-        format(ctx: Slick.FormatterContext): string;
-    }
-}
-declare namespace Sanctum.Northwind {
-    class EmployeeFormatter implements Slick.Formatter {
-        format(ctx: Slick.FormatterContext): string;
-        genderProperty: string;
-        initializeColumn(column: Slick.Column): void;
-    }
-}
-declare namespace Sanctum.Northwind {
-    class NoteDialog extends Serenity.TemplatedDialog<any> {
-        private textEditor;
-        constructor();
-        protected getTemplate(): string;
-        protected getDialogOptions(): JQueryUI.DialogOptions;
-        text: string;
-        okClick: () => void;
-    }
-}
-declare namespace Sanctum.Northwind {
-    class NotesEditor extends Serenity.TemplatedWidget<any> implements Serenity.IGetEditValue, Serenity.ISetEditValue {
-        private isDirty;
-        private items;
-        constructor(div: JQuery);
-        protected getTemplate(): string;
-        protected updateContent(): void;
-        protected addClick(): void;
-        protected editClick(e: any): void;
-        deleteClick(e: any): void;
-        value: NoteRow[];
-        getEditValue(prop: Serenity.PropertyItem, target: any): void;
-        setEditValue(source: any, prop: Serenity.PropertyItem): void;
-        get_isDirty(): boolean;
-        set_isDirty(value: any): void;
-        onChange: () => void;
-    }
-}
-declare namespace Sanctum.Northwind {
-    class FreightFormatter implements Slick.Formatter {
-        format(ctx: Slick.FormatterContext): string;
-    }
-}
-declare namespace Sanctum.Northwind {
-    class OrderDetailDialog extends Common.GridEditorDialog<OrderDetailRow> {
+declare namespace Sanctum.Community {
+    class BookFriendDialog extends Serenity.EntityDialog<BookFriendRow, any> {
         protected getFormKey(): string;
+        protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
-        protected form: OrderDetailForm;
-        constructor();
+        protected getService(): string;
+        protected form: BookFriendForm;
     }
 }
-declare namespace Sanctum.Northwind {
-    class OrderDetailsEditor extends Common.GridEditorBase<OrderDetailRow> {
+declare namespace Sanctum.Community {
+    class BookFriendGrid extends Serenity.EntityGrid<BookFriendRow, any> {
         protected getColumnsKey(): string;
-        protected getDialogType(): typeof OrderDetailDialog;
+        protected getDialogType(): typeof BookFriendDialog;
+        protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
+        protected getService(): string;
         constructor(container: JQuery);
-        validateEntity(row: any, id: any): boolean;
     }
 }
-declare namespace Sanctum.Northwind {
-    class ProductDialog extends Serenity.EntityDialog<ProductRow, any> {
+declare namespace Sanctum.Community {
+    class BookFriendGroupDialog extends Serenity.EntityDialog<BookFriendGroupRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
         protected getNameProperty(): string;
         protected getService(): string;
-        protected form: ProductForm;
+        protected form: BookFriendGroupForm;
     }
 }
-declare namespace Sanctum.Northwind {
-    class ProductGrid extends Serenity.EntityGrid<ProductRow, any> {
+declare namespace Sanctum.Community {
+    class BookFriendGroupGrid extends Serenity.EntityGrid<BookFriendGroupRow, any> {
         protected getColumnsKey(): string;
-        protected getDialogType(): any;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getService(): string;
-        private pendingChanges;
-        constructor(container: JQuery);
-        protected getButtons(): Serenity.ToolButton[];
-        protected onViewProcessData(response: any): Serenity.ListResponse<ProductRow>;
-        /**
-         * It would be nice if we could use autonumeric, Serenity editors etc. here, to control input validation,
-         * but it's not supported by SlickGrid as we are only allowed to return a string, and should attach
-         * no event handlers to rendered cell contents
-         */
-        private numericInputFormatter(ctx);
-        private stringInputFormatter(ctx);
-        /**
-         * Sorry but you cannot use LookupEditor, e.g. Select2 here, only possible is a SELECT element
-         */
-        private selectFormatter(ctx, idField, lookup);
-        private getEffectiveValue(item, field);
-        protected getColumns(): Slick.Column[];
-        private inputsChange(e);
-        private setSaveButtonState();
-        private saveClick();
-        protected getQuickFilters(): Serenity.QuickFilter<Serenity.Widget<any>, any>[];
-    }
-}
-declare namespace Sanctum.Northwind {
-    class RegionDialog extends Serenity.EntityDialog<RegionRow, any> {
-        protected getFormKey(): string;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getNameProperty(): string;
-        protected getService(): string;
-        protected form: RegionForm;
-        protected getLanguages(): string[][];
-    }
-}
-declare namespace Sanctum.Northwind {
-    class RegionGrid extends Serenity.EntityGrid<RegionRow, any> {
-        protected getColumnsKey(): string;
-        protected getDialogType(): any;
+        protected getDialogType(): typeof BookFriendGroupDialog;
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
     }
 }
-declare namespace Sanctum.Northwind {
-    class PhoneEditor extends Serenity.StringEditor {
-        constructor(input: JQuery);
-        protected formatValue(): void;
-        protected getFormattedValue(): string;
-        multiple: boolean;
-        get_value(): string;
-        set_value(value: string): void;
-        static validate(phone: string, isMultiple: boolean): string;
-        static isValidPhone(phone: string): boolean;
-        static formatPhone(phone: any): any;
-        static formatMulti(phone: string, format: (s: string) => string): string;
-        static isValidMulti(phone: string, check: (s: string) => boolean): boolean;
-    }
-}
-declare namespace Sanctum.Northwind {
-    class ShipperDialog extends Serenity.EntityDialog<ShipperRow, any> {
+declare namespace Sanctum.Community {
+    class BookshelfDialog extends Serenity.EntityDialog<BookshelfRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
         protected getNameProperty(): string;
         protected getService(): string;
-        protected form: ShipperForm;
-        protected getLanguages(): string[][];
+        protected form: BookshelfForm;
     }
 }
-declare namespace Sanctum.Northwind {
-    class ShipperFormatter implements Slick.Formatter {
-        format(ctx: Slick.FormatterContext): string;
-    }
-}
-declare namespace Sanctum.Northwind {
-    class ShipperGrid extends Serenity.EntityGrid<ShipperRow, any> {
+declare namespace Sanctum.Community {
+    class BookshelfGrid extends Serenity.EntityGrid<BookshelfRow, any> {
         protected getColumnsKey(): string;
-        protected getDialogType(): any;
+        protected getDialogType(): typeof BookshelfDialog;
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
     }
 }
-declare namespace Sanctum.Northwind {
-    class SupplierDialog extends Serenity.EntityDialog<SupplierRow, any> {
+declare namespace Sanctum.Community {
+    class BorrowApplyDialog extends Serenity.EntityDialog<BorrowApplyRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
-        protected getNameProperty(): string;
         protected getService(): string;
-        protected form: SupplierForm;
-        protected getLanguages(): string[][];
+        protected form: BorrowApplyForm;
     }
 }
-declare namespace Sanctum.Northwind {
-    class SupplierGrid extends Serenity.EntityGrid<SupplierRow, any> {
+declare namespace Sanctum.Community {
+    class BorrowApplyGrid extends Serenity.EntityGrid<BorrowApplyRow, any> {
         protected getColumnsKey(): string;
-        protected getDialogType(): any;
+        protected getDialogType(): typeof BorrowApplyDialog;
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
     }
 }
-declare namespace Sanctum.Northwind {
-    class TerritoryDialog extends Serenity.EntityDialog<TerritoryRow, any> {
+declare namespace Sanctum.Community {
+    class BorrowRecordDialog extends Serenity.EntityDialog<BorrowRecordRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
         protected getNameProperty(): string;
         protected getService(): string;
-        protected form: TerritoryForm;
-        protected getLanguages(): string[][];
+        protected form: BorrowRecordForm;
     }
 }
-declare namespace Sanctum.Northwind {
-    class TerritoryGrid extends Serenity.EntityGrid<TerritoryRow, any> {
+declare namespace Sanctum.Community {
+    class BorrowRecordGrid extends Serenity.EntityGrid<BorrowRecordRow, any> {
         protected getColumnsKey(): string;
-        protected getDialogType(): any;
+        protected getDialogType(): typeof BorrowRecordDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Sanctum.Community {
+    class BorrowRequirementDialog extends Serenity.EntityDialog<BorrowRequirementRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: BorrowRequirementForm;
+    }
+}
+declare namespace Sanctum.Community {
+    class BorrowRequirementGrid extends Serenity.EntityGrid<BorrowRequirementRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof BorrowRequirementDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Sanctum.Community {
+    class DonationRecordDialog extends Serenity.EntityDialog<DonationRecordRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: DonationRecordForm;
+    }
+}
+declare namespace Sanctum.Community {
+    class DonationRecordGrid extends Serenity.EntityGrid<DonationRecordRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof DonationRecordDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Sanctum.Community {
+    class PersonalityAnalysisDialog extends Serenity.EntityDialog<PersonalityAnalysisRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: PersonalityAnalysisForm;
+    }
+}
+declare namespace Sanctum.Community {
+    class PersonalityAnalysisGrid extends Serenity.EntityGrid<PersonalityAnalysisRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof PersonalityAnalysisDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Sanctum.Community {
+    class PrivateBookDialog extends Serenity.EntityDialog<PrivateBookRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: PrivateBookForm;
+    }
+}
+declare namespace Sanctum.Community {
+    class PrivateBookGrid extends Serenity.EntityGrid<PrivateBookRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof PrivateBookDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Sanctum.Community {
+    class RecommendBookDialog extends Serenity.EntityDialog<RecommendBookRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: RecommendBookForm;
+    }
+}
+declare namespace Sanctum.Community {
+    class RecommendBookGrid extends Serenity.EntityGrid<RecommendBookRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof RecommendBookDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Sanctum.Community {
+    class WeiXinUserDialog extends Serenity.EntityDialog<WeiXinUserRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: WeiXinUserForm;
+    }
+}
+declare namespace Sanctum.Community {
+    class WeiXinUserGrid extends Serenity.EntityGrid<WeiXinUserRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof WeiXinUserDialog;
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
         protected getService(): string;
@@ -2663,706 +2221,6 @@ declare namespace Sanctum.Northwind {
 declare namespace Sanctum.Authorization {
     let userDefinition: ScriptUserDefinition;
     function hasPermission(permissionKey: string): boolean;
-}
-declare var Morris: any;
-declare namespace Sanctum.BasicSamples {
-    class ChartInDialog extends Serenity.TemplatedDialog<any> {
-        private areaChart;
-        static initializePage(): void;
-        protected onDialogOpen(): void;
-        protected arrange(): void;
-        protected getTemplate(): string;
-        protected getDialogOptions(): JQueryUI.DialogOptions;
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    class CloneableEntityDialog extends Northwind.ProductDialog {
-        protected updateInterface(): void;
-        /**
-         * Overriding this method is optional to customize cloned entity
-         */
-        protected getCloningEntity(): Northwind.ProductRow;
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    /**
-     * Subclass of ProductGrid to override dialog type to CloneableEntityDialog
-     */
-    class CloneableEntityGrid extends Northwind.ProductGrid {
-        protected getDialogType(): typeof CloneableEntityDialog;
-        constructor(container: JQuery);
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    class DefaultValuesInNewGrid extends Northwind.OrderGrid {
-        constructor(container: JQuery);
-        /**
-         * This method is called when New Item button is clicked.
-         * By default, it calls EditItem with an empty entity.
-         * This is a good place to fill in default values for New Item button.
-         */
-        protected addButtonClick(): void;
-        protected getButtons(): Serenity.ToolButton[];
-    }
-}
-declare namespace Sanctum.BasicSamples.DialogBoxes {
-    function initializePage(): void;
-}
-declare namespace Sanctum.BasicSamples {
-    /**
-     * A version of order dialog converted to a panel by adding Serenity.Decorators.panel decorator.
-     */
-    class EntityDialogAsPanel extends Northwind.OrderDialog {
-        constructor();
-        protected updateInterface(): void;
-        protected onSaveSuccess(response: any): void;
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    class GetInsertedRecordIdDialog extends Northwind.CategoryDialog {
-        /**
-         * This method is called after the save request to service
-         * is completed succesfully. This can be an insert or update.
-         *
-         * @param response Response that is returned from server
-         */
-        protected onSaveSuccess(response: Serenity.SaveResponse): void;
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    /**
-     * Subclass of CategoryGrid to override dialog type to GetInsertedRecordIdDialog
-     */
-    class GetInsertedRecordIdGrid extends Northwind.CategoryGrid {
-        protected getDialogType(): typeof GetInsertedRecordIdDialog;
-        constructor(container: JQuery);
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    /**
-     * Styling for columns is done with CSS in site.basicsamples.less file.
-     * When comparing this to MultiColumnDialog sample, you may notice that
-     * this version requires much less JS and CSS code.
-     */
-    class MultiColumnResponsiveDialog extends Northwind.OrderDialog {
-        constructor();
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    /**
-     * Subclass of OrderGrid to override dialog type to MultiColumnResponsiveDialog
-     */
-    class MultiColumnResponsiveGrid extends Northwind.OrderGrid {
-        protected getDialogType(): typeof MultiColumnResponsiveDialog;
-        constructor(container: JQuery);
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    /**
-     * Our custom order dialog subclass that will have a tab to display and edit selected customer details.
-     */
-    class OtherFormInTabDialog extends Northwind.OrderDialog {
-        private customerPropertyGrid;
-        private customerForm;
-        private customerValidator;
-        constructor();
-        getCustomerID(): number;
-        loadEntity(entity: Northwind.OrderRow): void;
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    /**
-     * Subclass of OrderGrid to override dialog type to OtherFormInTabDialog
-     */
-    class OtherFormInTabGrid extends Northwind.OrderGrid {
-        protected getDialogType(): typeof OtherFormInTabDialog;
-        constructor(container: JQuery);
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    /**
-     * Our custom order dialog subclass that will have a tab to display and edit selected customer details.
-     * With single toolbar for all forms
-     */
-    class OtherFormOneBarDialog extends Northwind.OrderDialog {
-        private customerPropertyGrid;
-        private customerForm;
-        private customerValidator;
-        private selfChange;
-        constructor();
-        getCustomerID(): number;
-        loadEntity(entity: Northwind.OrderRow): void;
-        protected saveCustomer(callback: (response: Serenity.SaveResponse) => void, onSuccess?: (response: Serenity.SaveResponse) => void): boolean;
-        protected saveOrder(callback: (response: Serenity.SaveResponse) => void): void;
-        protected saveAll(callback: (response: Serenity.SaveResponse) => void): void;
-        protected save(callback: (response: Serenity.SaveResponse) => void): void;
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    /**
-     * Subclass of OrderGrid to override dialog type to OtherFormInTabOneBarDialog
-     */
-    class OtherFormInTabOneBarGrid extends Northwind.OrderGrid {
-        protected getDialogType(): typeof OtherFormOneBarDialog;
-        constructor(container: JQuery);
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    class PopulateLinkedDataDialog extends Serenity.EntityDialog<Northwind.OrderRow, any> {
-        protected getFormKey(): string;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getNameProperty(): string;
-        protected getService(): string;
-        protected form: PopulateLinkedDataForm;
-        constructor();
-        private setCustomerDetails(details);
-        /**
-         * This dialog will have CSS class "s-PopulateLinkedDataDialog"
-         * We are changing it here to "s-OrderDialog", to make it use default OrderDialog styles
-         * This has no effect other than looks on populate linked data demonstration
-         */
-        protected getCssClass(): string;
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    /**
-     * A subclass of OrderGrid that launches PopulateLinkedDataDialog
-     */
-    class PopulateLinkedDataGrid extends Northwind.OrderGrid {
-        protected getDialogType(): typeof PopulateLinkedDataDialog;
-        constructor(container: JQuery);
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    class ReadOnlyDialog extends Northwind.SupplierDialog {
-        /**
-         * This is the method that gets list of tool
-         * buttons to be created in a dialog.
-         *
-         * Here we'll remove save and close button, and
-         * apply changes buttons.
-         */
-        protected getToolbarButtons(): Serenity.ToolButton[];
-        /**
-         * This method is a good place to update states of
-         * interface elements. It is called after dialog
-         * is initialized and an entity is loaded into dialog.
-         * This is also called in new item mode.
-         */
-        protected updateInterface(): void;
-        /**
-         * This method is called when dialog title needs to be updated.
-         * Base class returns something like 'Edit xyz' for edit mode,
-         * and 'New xyz' for new record mode.
-         *
-         * But our dialog is readonly, so we should change it to 'View xyz'
-         */
-        protected getEntityTitle(): string;
-        /**
-         * This method is actually the one that calls getEntityTitle()
-         * and updates the dialog title. We could do it here too...
-         */
-        protected updateTitle(): void;
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    /**
-     * A readonly grid that launches ReadOnlyDialog
-     */
-    class ReadOnlyGrid extends Northwind.SupplierGrid {
-        protected getDialogType(): typeof ReadOnlyDialog;
-        constructor(container: JQuery);
-        /**
-         * Removing add button from grid using its css class
-         */
-        protected getButtons(): Serenity.ToolButton[];
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    /**
-     * Adding Responsive attribute makes this dialog use full screen in mobile devices.
-     */
-    class ResponsiveDialog extends Serenity.EntityDialog<Northwind.OrderRow, any> {
-        protected getFormKey(): string;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getNameProperty(): string;
-        protected getService(): string;
-        constructor();
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    /**
-     * Subclass of OrderGrid to override dialog type to ResponsiveDialog
-     */
-    class ResponsiveGrid extends Northwind.OrderGrid {
-        protected getDialogType(): typeof ResponsiveDialog;
-        constructor(container: JQuery);
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    class SerialAutoNumberDialog extends Northwind.CustomerDialog {
-        constructor();
-        protected afterLoadEntity(): void;
-        private getNextNumber();
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    /**
-     * Subclass of CustomerGrid to override dialog type to SerialAutoNumberDialog
-     */
-    class SerialAutoNumberGrid extends Northwind.CustomerGrid {
-        protected getDialogType(): typeof SerialAutoNumberDialog;
-        constructor(container: JQuery);
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    class ChangingLookupTextDialog extends Common.GridEditorDialog<Northwind.OrderDetailRow> {
-        protected getFormKey(): string;
-        protected getLocalTextPrefix(): string;
-        protected form: ChangingLookupTextForm;
-        constructor();
-        protected updateInterface(): void;
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    /**
-     * Our custom product editor type
-     */
-    class ChangingLookupTextEditor extends Serenity.LookupEditorBase<Serenity.LookupEditorOptions, Northwind.ProductRow> {
-        constructor(container: JQuery, options: Serenity.LookupEditorOptions);
-        protected getLookupKey(): string;
-        protected getItemText(item: Northwind.ProductRow, lookup: Q.Lookup<Northwind.ProductRow>): string;
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    /**
-     * Our subclass of order detail dialog with a CategoryID property
-     * that will be used to set CascadeValue of product editor
-     */
-    class FilteredLookupOrderDetailDialog extends Northwind.OrderDetailDialog {
-        constructor();
-        /**
-         * This method is called just before an entity is loaded to dialog
-         * This is also called for new record mode with an empty entity
-         */
-        protected beforeLoadEntity(entity: any): void;
-        categoryID: number;
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    /**
-     * Our subclass of Order Details editor with a CategoryID property
-     */
-    class FilteredLookupDetailEditor extends Northwind.OrderDetailsEditor {
-        protected getDialogType(): typeof FilteredLookupOrderDetailDialog;
-        constructor(container: JQuery);
-        categoryID: number;
-        /**
-         * This method is called to initialize an edit dialog created by
-         * grid editor when Add button or an edit link is clicked
-         * We have an opportunity here to pass CategoryID to edit dialog
-         */
-        protected initEntityDialog(itemType: string, dialog: Serenity.Widget<any>): void;
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    /**
-     * Basic order dialog with a category selection
-     */
-    class FilteredLookupInDetailDialog extends Serenity.EntityDialog<Northwind.OrderRow, any> {
-        protected getFormKey(): string;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getNameProperty(): string;
-        protected getService(): string;
-        private form;
-        constructor();
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    /**
-     * Subclass of OrderGrid to override dialog type to FilteredLookupInDetailDialog
-     */
-    class FilteredLookupInDetailGrid extends Northwind.OrderGrid {
-        protected getDialogType(): typeof FilteredLookupInDetailDialog;
-        constructor(container: JQuery);
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    /**
-     * This is our custom product dialog that uses a different product form
-     * (LookupFilterByMultipleForm) with our special category editor.
-     */
-    class LookupFilterByMultipleDialog extends Northwind.ProductDialog {
-        protected getFormKey(): string;
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    /**
-     * Subclass of ProductGrid to override dialog type to CloneableEntityDialog
-     */
-    class LookupFilterByMultipleGrid extends Northwind.ProductGrid {
-        protected getDialogType(): typeof LookupFilterByMultipleDialog;
-        constructor(container: JQuery);
-        /**
-         * This method is called just before List request is sent to service.
-         * You have an opportunity here to cancel request or modify it.
-         * Here we'll add a custom criteria to list request.
-         */
-        protected onViewSubmit(): boolean;
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    /**
-     * This is our category editor that will show only categories of Produce and
-     * Seafood. We are subclassing LookupEditorBase which also LookupEditor
-     * derives from.
-     *
-     * After compiling and transforming templates, this editor type will be
-     * available in server side to use in our LookupFilterByMultipleForm,
-     * which is a version of ProductForm that uses our custom editor.
-     */
-    class ProduceSeafoodCategoryEditor extends Serenity.LookupEditorBase<Serenity.LookupEditorOptions, Northwind.CategoryRow> {
-        constructor(container: JQuery, opt: Serenity.LookupEditorOptions);
-        /**
-         * Normally LookupEditor requires a lookup key to determine which set of
-         * lookup data to show in editor. As our editor will only show category
-         * data, we lock it to category lookup key.
-         */
-        protected getLookupKey(): string;
-        /**
-         * Here we are filtering by category name but you could filter by any field.
-         * Just make sure the fields you filter on has [LookupInclude] attribute on them,
-         * otherwise their value will be null in client side as they are not sent back
-         * from server in lookup script.
-         */
-        protected getItems(lookup: Q.Lookup<Northwind.CategoryRow>): Northwind.CategoryRow[];
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    class HardcodedValuesDialog extends Serenity.PropertyDialog<any, any> {
-        protected getFormKey(): string;
-        protected form: HardcodedValuesForm;
-        constructor();
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    /**
-     * Our select editor with hardcoded values.
-     *
-     * When you define a new editor type, make sure you build
-     * and transform templates for it to be available
-     * in server side forms, e.g. [HardCodedValuesEditor]
-     */
-    class HardcodedValuesEditor extends Serenity.Select2Editor<any, any> {
-        constructor(container: JQuery);
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    class StaticTextBlockDialog extends Serenity.PropertyDialog<any, any> {
-        protected getFormKey(): string;
-        protected form: StaticTextBlockForm;
-        constructor();
-        /**
-         * Here we override loadInitialEntity method to set value for "DisplayFieldValue" field.
-         * If this was an EntityDialog, your field value would be originating from server side entity.
-         */
-        protected loadInitialEntity(): void;
-        protected getDialogOptions(): JQueryUI.DialogOptions;
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    class OrderBulkAction extends Common.BulkServiceAction {
-        /**
-         * This controls how many service requests will be used in parallel.
-         * Determine this number based on how many requests your server
-         * might be able to handle, and amount of wait on external resources.
-         */
-        protected getParallelRequests(): number;
-        /**
-         * These number of records IDs will be sent to your service in one
-         * service call. If your service is designed to handle one record only,
-         * set it to 1. But note that, if you have 5000 records, this will
-         * result in 5000 service calls / requests.
-         */
-        protected getBatchSize(): number;
-        /**
-         * This is where you should call your service.
-         * Batch parameter contains the selected order IDs
-         * that should be processed in this service call.
-         */
-        protected executeForBatch(batch: any): void;
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    class CancellableBulkActionGrid extends Northwind.OrderGrid {
-        private rowSelection;
-        constructor(container: JQuery);
-        protected createToolbarExtensions(): void;
-        protected getButtons(): {
-            title: string;
-            cssClass: string;
-            onClick: () => void;
-        }[];
-        protected getColumns(): Slick.Column[];
-        protected getViewOptions(): Slick.RemoteViewOptions;
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    class ConditionalFormattingGrid extends Serenity.EntityGrid<Northwind.ProductRow, any> {
-        protected getColumnsKey(): string;
-        protected getDialogType(): any;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getService(): string;
-        constructor(container: JQuery);
-        /**
-         * We override getColumns() to be able to add a custom CSS class to UnitPrice
-         * We could also add this class in ProductColumns.cs but didn't want to modify
-         * it solely for this sample.
-         */
-        protected getColumns(): Slick.Column[];
-        /**
-         * This method is called for all rows
-         * @param item Data item for current row
-         * @param index Index of the row in grid
-         */
-        protected getItemCssClass(item: Northwind.ProductRow, index: number): string;
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    class CustomLinksInGrid extends Northwind.OrderGrid {
-        constructor(container: JQuery);
-        /**
-         * We override getColumns() to change format functions for some columns.
-         * You could also write them as formatter classes, and use them at server side
-         */
-        protected getColumns(): Slick.Column[];
-        protected onClick(e: JQueryEventObject, row: number, cell: number): void;
-        /**
-         * This method is called for columns with [EditLink] attribute,
-         * but only for edit links of this grid's own item type.
-         * It is also called by Add Product button with a NULL entityOrId
-         * parameter so we should check that entityOrId is a string
-         * to be sure it is originating from a link.
-         *
-         * As we changed format for other columns, this will only be called
-         * for links in remaining OrderID column
-         */
-        protected editItem(entityOrId: any): void;
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    class DragDropSampleDialog extends Serenity.EntityDialog<DragDropSampleRow, any> {
-        protected getFormKey(): string;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getNameProperty(): string;
-        protected getService(): string;
-        protected form: DragDropSampleForm;
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    class DragDropSampleGrid extends Serenity.EntityGrid<DragDropSampleRow, any> {
-        protected getColumnsKey(): string;
-        protected getDialogType(): typeof DragDropSampleDialog;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getService(): string;
-        private dragging;
-        constructor(container: JQuery);
-        /**
-         * This method will determine if item can be moved under a given target
-         * An item can't be moved under itself, under one of its children
-         */
-        private canMoveUnder(item, target);
-        /**
-         * Gets children list of an item
-         */
-        private getChildren(item);
-        /**
-         * Gets all parents of an item
-         */
-        private getParents(item);
-        protected getButtons(): any[];
-        protected usePager(): boolean;
-    }
-}
-declare namespace Sanctum {
-    class SelectableEntityGrid<TItem, TOptions> extends Serenity.EntityGrid<TItem, TOptions> {
-        protected getSlickOptions(): Slick.GridOptions;
-        protected createSlickGrid(): Slick.Grid;
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    class RowSelectionGrid extends SelectableEntityGrid<Northwind.SupplierRow, any> {
-        protected getColumnsKey(): string;
-        protected getDialogType(): any;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getService(): string;
-        constructor(container: JQuery);
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    class GridFilteredByCriteria extends Northwind.ProductGrid {
-        constructor(container: JQuery);
-        protected onViewSubmit(): boolean;
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    class GroupingAndSummariesInGrid extends Northwind.ProductGrid {
-        constructor(container: JQuery);
-        protected createSlickGrid(): Slick.Grid;
-        protected getColumns(): Slick.Column[];
-        protected getSlickOptions(): Slick.GridOptions;
-        protected usePager(): boolean;
-        protected getButtons(): {
-            title: string;
-            cssClass: string;
-            onClick: () => void;
-        }[];
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    class InitialValuesForQuickFilters extends Northwind.OrderGrid {
-        constructor(container: JQuery);
-        /**
-         * This method is called to get list of quick filters to be created for this grid.
-         * By default, it returns quick filter objects corresponding to properties that
-         * have a [QuickFilter] attribute at server side OrderColumns.cs
-         */
-        protected getQuickFilters(): Serenity.QuickFilter<Serenity.Widget<any>, any>[];
-        /**
-         * This method is another possible place to modify quick filter widgets.
-         * It is where the quick filter widgets are actually created.
-         *
-         * By default, it calls getQuickFilters() then renders UI for these
-         * quick filters.
-         *
-         * We could use getQuickFilters() method for ShipVia too,
-         * but this is for demonstration purposes
-         */
-        protected createQuickFilters(): void;
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    class InlineActionGrid extends Northwind.CustomerGrid {
-        constructor(container: JQuery);
-        protected getColumns(): Slick.Column[];
-        protected onClick(e: JQueryEventObject, row: number, cell: number): void;
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    class InlineImageFormatter implements Slick.Formatter, Serenity.IInitializeColumn {
-        format(ctx: Slick.FormatterContext): string;
-        initializeColumn(column: Slick.Column): void;
-        fileProperty: string;
-        thumb: boolean;
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    class InlineImageInGrid extends Serenity.EntityGrid<Northwind.ProductRow, any> {
-        protected getColumnsKey(): string;
-        protected getDialogType(): any;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getService(): string;
-        constructor(container: JQuery);
-        protected getSlickOptions(): Slick.GridOptions;
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    class ProductExcelImportDialog extends Serenity.PropertyDialog<any, any> {
-        private form;
-        constructor();
-        protected getDialogTitle(): string;
-        protected getDialogButtons(): Serenity.DialogButton[];
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    class ProductExcelImportGrid extends Northwind.ProductGrid {
-        constructor(container: JQuery);
-        /**
-         * This method is called to get list of buttons to be created.
-         */
-        protected getButtons(): Serenity.ToolButton[];
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    class QuickFilterCustomization extends Serenity.EntityGrid<Northwind.OrderRow, any> {
-        protected getColumnsKey(): string;
-        protected getDialogType(): typeof Northwind.OrderDialog;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getService(): string;
-        constructor(container: JQuery);
-        /**
-         * This method is called to get list of quick filters to be created for this grid.
-         * By default, it returns quick filter objects corresponding to properties that
-         * have a [QuickFilter] attribute at server side OrderColumns.cs
-         */
-        protected getQuickFilters(): Serenity.QuickFilter<Serenity.Widget<any>, any>[];
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    class RemovingAddButton extends Northwind.SupplierGrid {
-        constructor(container: JQuery);
-        /**
-         * This method is called to get list of buttons to be created.
-         */
-        protected getButtons(): Serenity.ToolButton[];
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    class CustomerGrossSalesGrid extends Serenity.EntityGrid<Northwind.CustomerGrossSalesRow, any> {
-        protected getColumnsKey(): string;
-        protected getIdProperty(): string;
-        protected getNameProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getService(): string;
-        private nextId;
-        constructor(container: JQuery);
-        /**
-         * This method is called to preprocess data returned from the list service
-         */
-        protected onViewProcessData(response: Serenity.ListResponse<Northwind.SalesByCategoryRow>): Serenity.ListResponse<Northwind.SalesByCategoryRow>;
-        protected getButtons(): any[];
-        protected createSlickGrid(): Slick.Grid;
-        protected getSlickOptions(): Slick.GridOptions;
-        protected usePager(): boolean;
-        protected getQuickFilters(): Serenity.QuickFilter<Serenity.Widget<any>, any>[];
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    class TreeGrid extends Northwind.OrderGrid {
-        private treeMixin;
-        constructor(container: JQuery);
-        protected usePager(): boolean;
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    class ViewWithoutIDGrid extends Serenity.EntityGrid<Northwind.SalesByCategoryRow, any> {
-        protected getColumnsKey(): string;
-        protected getIdProperty(): string;
-        protected getNameProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getService(): string;
-        private nextId;
-        constructor(container: JQuery);
-        /**
-         * This method is called to preprocess data returned from the list service
-         */
-        protected onViewProcessData(response: Serenity.ListResponse<Northwind.SalesByCategoryRow>): Serenity.ListResponse<Northwind.SalesByCategoryRow>;
-        protected getButtons(): any[];
-    }
-}
-declare namespace Sanctum.BasicSamples {
-    class WrappedHeadersGrid extends Northwind.OrderGrid {
-        constructor(container: JQuery);
-    }
 }
 declare namespace Sanctum.Membership {
     class ChangePasswordPanel extends Serenity.PropertyPanel<ChangePasswordRequest, any> {

@@ -1,9 +1,9 @@
 ﻿using Serenity.Navigation;
 using Administration = Sanctum.Administration.Pages;
 
-[assembly: NavigationMenu(9000, "Administration", icon: "fa-desktop")]
-[assembly: NavigationLink(9000, "Administration/Languages", typeof(Administration.LanguageController), icon: "fa-comments")]
-[assembly: NavigationLink(9000, "Administration/Translations", typeof(Administration.TranslationController), icon: "fa-comment-o")]
-[assembly: NavigationLink(9000, "Administration/Sergen", typeof(Administration.SergenController), icon: "fa-magic")]
-[assembly: NavigationLink(9000, "Administration/Roles", typeof(Administration.RoleController), icon: "fa-lock")]
-[assembly: NavigationLink(9000, "Administration/User Management", typeof(Administration.UserController), icon: "fa-users")]
+[assembly: NavigationMenu(int.MaxValue, "Administration", icon: "fa-desktop")]
+[assembly: NavigationLink(int.MaxValue, "Administration/Languages", typeof(Administration.LanguageController), icon: "fa-comments")]
+[assembly: NavigationLink(int.MaxValue, "Administration/Translations", typeof(Administration.TranslationController), icon: "fa-comment-o")]
+[assembly: NavigationLink(int.MaxValue, "Administration/Sergen", typeof(Administration.SergenController), icon: "fa-magic")]
+[assembly: NavigationLink(int.MaxValue, "Administration/Roles", typeof(Administration.RoleController), icon: "fa-lock")]
+[assembly: NavigationLink(int.MaxValue, "Administration/User Management", typeof(Administration.UserController), icon: "fa-users")]

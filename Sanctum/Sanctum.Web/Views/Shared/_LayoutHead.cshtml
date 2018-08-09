@@ -4,13 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 <link rel="home" id="ApplicationPath" href="~/" />
-<link rel="icon" type="image/x-icon" href="~/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="~/favbook.ico" />
 @Html.StyleBundle("Base")
 @Html.StyleBundle("Site")
 @if (System.Globalization.CultureInfo.CurrentUICulture.TextInfo.IsRightToLeft)
 {
     @Html.Stylesheet("~/Content/site/site.rtl.css")
 }
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
 <script type="application/json" id="ScriptCulture">@Html.Raw(Serenity.JSON.Stringify(new ScriptCulture()))</script>
 <script type="text/javascript">window.paceOptions = { startOnPageLoad: false, ajax: { trackMethods: ['GET', 'POST'], trackWebSockets: false, ignoreURLs: [] } };</script>
 @Html.ScriptBundle("Base")

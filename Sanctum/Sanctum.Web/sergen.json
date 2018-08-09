@@ -1,9 +1,101 @@
-﻿{
+{
   "RootNamespace": "Sanctum",
   "ServerTypings": {
     "Assemblies": []
   },
-  "Connections": [],
+  "Connections": [
+    {
+      "Key": "Default",
+      "Tables": [
+        {
+          "Tablename": "dbo.Area",
+          "Identifier": "Area",
+          "Module": "Community",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "dbo.BookCategory",
+          "Identifier": "BookCategory",
+          "Module": "Community",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "dbo.BookComment",
+          "Identifier": "BookComment",
+          "Module": "Community",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "dbo.BookFriend",
+          "Identifier": "BookFriend",
+          "Module": "Community",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "dbo.BookFriendGroup",
+          "Identifier": "BookFriendGroup",
+          "Module": "Community",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "dbo.Bookshelf",
+          "Identifier": "Bookshelf",
+          "Module": "Community",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "dbo.BorrowApply",
+          "Identifier": "BorrowApply",
+          "Module": "Community",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "dbo.BorrowRecord",
+          "Identifier": "BorrowRecord",
+          "Module": "Community",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "dbo.BorrowRequirement",
+          "Identifier": "BorrowRequirement",
+          "Module": "Community",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "dbo.DonationRecord",
+          "Identifier": "DonationRecord",
+          "Module": "Community",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "dbo.PersonalityAnalysis",
+          "Identifier": "PersonalityAnalysis",
+          "Module": "Community",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "dbo.PrivateBook",
+          "Identifier": "PrivateBook",
+          "Module": "Community",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "dbo.RecommendBook",
+          "Identifier": "RecommendBook",
+          "Module": "Community",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "dbo.WeiXinUser",
+          "Identifier": "WeiXinUser",
+          "Module": "Community",
+          "PermissionKey": "Administration:General"
+        }
+      ]
+    }
+  ],
   "BaseRowClasses": [],
-  "RemoveForeignFields": []
+  "RemoveForeignFields": [],
+  "CustomGenerate": {},
+  "CustomSettings": {}
 }
