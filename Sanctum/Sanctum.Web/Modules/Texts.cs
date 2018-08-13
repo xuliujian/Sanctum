@@ -158,12 +158,12 @@ namespace Sanctum
 
             public static class Layout
             {
-                public static LocalText FooterCopyright = "Copyright (c) 2015.";
-                public static LocalText FooterInfo = "Serenity Platform";
-                public static LocalText FooterRights = "All rights reserved.";
-                public static LocalText GeneralSettings = "General Settings";
-                public static LocalText Language = "Language";
-                public static LocalText Theme = "Theme";
+                public static LocalText FooterCopyright = "Copyright (c)";
+                public static LocalText FooterInfo = "圣道书架管理平台";
+                public static LocalText FooterRights = "版权所有.";
+                public static LocalText GeneralSettings = "通用设置";
+                public static LocalText Language = "语言";
+                public static LocalText Theme = "主题";
                 public static LocalText ThemeBlack = "Black";
                 public static LocalText ThemeBlackLight = "Black Light";
                 public static LocalText ThemeBlue = "Blue";
