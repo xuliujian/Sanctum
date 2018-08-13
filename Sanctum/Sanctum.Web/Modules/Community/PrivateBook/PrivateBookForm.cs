@@ -26,7 +26,9 @@ namespace Sanctum.Community.Forms
         public Int32 BookshelfId { get; set; }
         public Boolean OffShelves { get; set; }
         public Int32 Status { get; set; }
+        [Hidden]
         public Int32 Uploader { get; set; }
+        [Hidden]
         public DateTime UploadTime { get; set; }
     }
 }

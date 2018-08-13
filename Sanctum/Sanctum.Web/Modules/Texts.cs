@@ -161,7 +161,7 @@ namespace Sanctum
                 public static LocalText FooterCopyright = "Copyright (c)";
                 public static LocalText FooterInfo = "圣道书架管理平台";
                 public static LocalText FooterRights = "版权所有.";
-                public static LocalText GeneralSettings = "通用设置";
+                public static LocalText GeneralSettings = "基本设置";
                 public static LocalText Language = "语言";
                 public static LocalText Theme = "主题";
                 public static LocalText ThemeBlack = "Black";

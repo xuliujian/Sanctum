@@ -121,7 +121,7 @@ namespace Sanctum.Community.Entities
             set { Fields.Status[this] = value; }
         }
 
-        [DisplayName("Uploader"), NotNull, ForeignKey("WeiXinUser", "ID"), LeftJoin("jWeiXinUser")]
+        [DisplayName("Uploader"), NotNull, ForeignKey("WeiXinUser", "ID"), LeftJoin("jWeiXinUser"), Hidden]
         public Int32? Uploader
         {
             get { return Fields.Uploader[this]; }

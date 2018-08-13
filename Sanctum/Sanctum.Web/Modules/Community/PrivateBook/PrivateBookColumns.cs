@@ -13,7 +13,7 @@ namespace Sanctum.Community.Columns
     [BasedOnRow(typeof(Entities.PrivateBookRow), CheckNames = true)]
     public class PrivateBookColumns
     {
-        [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
+        [DisplayName("Db.Shared.RecordId"), AlignRight]
         public Int32 Id { get; set; }
         [EditLink]
         public String BookName { get; set; }
@@ -30,6 +30,7 @@ namespace Sanctum.Community.Columns
         public Boolean OffShelves { get; set; }
         public Int32 Status { get; set; }
         public Int32 Uploader { get; set; }
+        public String UploaderNickName { get; set; }
         public DateTime UploadTime { get; set; }
     }
 }
