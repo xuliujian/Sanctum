@@ -10,83 +10,90 @@ namespace Sanctum.Community.Entities
     using System.IO;
 
     [ConnectionKey("Default"), Module("Community"), TableName("[dbo].[RecommendBook]")]
-    [DisplayName("Recommend Book"), InstanceName("Recommend Book")]
+    [DisplayName("书籍推荐"), InstanceName("书籍推荐")]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
     public sealed class RecommendBookRow : Row, IIdRow, INameRow
     {
 
-        [DisplayName("Id"), Column("ID"), NotNull]
+        [DisplayName("Id"), Column("ID"), PrimaryKey, Identity, Hidden]
         public Int32? Id
         {
             get { return Fields.Id[this]; }
             set { Fields.Id[this] = value; }
         }
 
-        [DisplayName("Book Name"), Size(100), NotNull, QuickSearch]
+        [DisplayName("书籍名称"), Size(100), NotNull, QuickSearch]
         public String BookName
         {
             get { return Fields.BookName[this]; }
             set { Fields.BookName[this] = value; }
         }
 
-        [DisplayName("Book Category"), NotNull]
+        [DisplayName("书籍分类"), NotNull]
         public String BookCategory
         {
             get { return Fields.BookCategory[this]; }
             set { Fields.BookCategory[this] = value; }
         }
 
-        [DisplayName("Author"), Size(50)]
+        [DisplayName("作者"), Size(50)]
         public String Author
         {
             get { return Fields.Author[this]; }
             set { Fields.Author[this] = value; }
         }
 
-        [DisplayName("Exponent")]
+        [DisplayName("推荐指数")]
         public Double? Exponent
         {
             get { return Fields.Exponent[this]; }
             set { Fields.Exponent[this] = value; }
         }
 
-        [DisplayName("Book Remark"), Size(1073741823)]
+        [DisplayName("个人书评"), Size(1073741823)]
         public String BookRemark
         {
             get { return Fields.BookRemark[this]; }
             set { Fields.BookRemark[this] = value; }
         }
 
-        [DisplayName("Instroduction"), Size(1073741823)]
+        [DisplayName("内容介绍"), Size(1073741823)]
         public String Instroduction
         {
             get { return Fields.Instroduction[this]; }
             set { Fields.Instroduction[this] = value; }
         }
 
-        [DisplayName("View Count")]
+        [DisplayName("点击次数")]
         public Int32? ViewCount
         {
             get { return Fields.ViewCount[this]; }
             set { Fields.ViewCount[this] = value; }
         }
 
-        [DisplayName("Heat Level")]
+        [DisplayName("推荐热度")]
         public Double? HeatLevel
         {
             get { return Fields.HeatLevel[this]; }
             set { Fields.HeatLevel[this] = value; }
         }
 
-        [DisplayName("Referrer"), NotNull]
+        [DisplayName("Referrer"), NotNull, ForeignKey("WeiXinUser", "ID"), LeftJoin("jWeiXinUser")]
         public Int32? Referrer
         {
             get { return Fields.Referrer[this]; }
             set { Fields.Referrer[this] = value; }
         }
 
-        [DisplayName("Refer Time"), NotNull]
+        [DisplayName("推荐者"), Expression("jWeiXinUser.[NickName]")]
+        public String ReferrerNickName
+        {
+            get { return Fields.ReferrerNickName[this]; }
+            set { Fields.ReferrerNickName[this] = value; }
+        }
+
+        [DisplayName("推荐时间"), NotNull]
         public DateTime? ReferTime
         {
             get { return Fields.ReferTime[this]; }
@@ -134,6 +141,8 @@ namespace Sanctum.Community.Entities
             public DoubleField HeatLevel;
 
             public Int32Field Referrer;
+
+            public StringField ReferrerNickName;
 
             public DateTimeField ReferTime;
 

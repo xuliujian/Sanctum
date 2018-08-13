@@ -1,6 +1,6 @@
 ﻿namespace Sanctum.Community {
     export interface BorrowRequirementForm {
-        Publisher: Serenity.IntegerEditor;
+        PublisherID: Serenity.IntegerEditor;
         BookName: Serenity.StringEditor;
         BookCategory: Serenity.StringEditor;
         IsPaid: Serenity.BooleanEditor;
@@ -26,7 +26,7 @@
                 var w3 = s.DateEditor;
 
                 Q.initFormType(BorrowRequirementForm, [
-                    'Publisher', w0,
+                    'PublisherID', w0,
                     'BookName', w1,
                     'BookCategory', w1,
                     'IsPaid', w2,

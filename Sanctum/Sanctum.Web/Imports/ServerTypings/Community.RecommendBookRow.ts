@@ -10,6 +10,7 @@
         ViewCount?: number;
         HeatLevel?: number;
         Referrer?: number;
+        ReferrerNickName?: string;
         ReferTime?: string;
     }
 
@@ -29,6 +30,7 @@
             ViewCount = "ViewCount",
             HeatLevel = "HeatLevel",
             Referrer = "Referrer",
+            ReferrerNickName = "ReferrerNickName",
             ReferTime = "ReferTime"
         }
     }

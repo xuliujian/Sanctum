@@ -10,118 +10,132 @@ namespace Sanctum.Community.Entities
     using System.IO;
 
     [ConnectionKey("Default"), Module("Community"), TableName("[dbo].[PrivateBook]")]
-    [DisplayName("Private Book"), InstanceName("Private Book")]
+    [DisplayName("私人藏书"), InstanceName("私人藏书")]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
     public sealed class PrivateBookRow : Row, IIdRow, INameRow
     {
 
-        [DisplayName("Id"), Column("ID"), NotNull]
+        [DisplayName("Id"), Column("ID"), Identity, PrimaryKey,Hidden]
         public Int32? Id
         {
             get { return Fields.Id[this]; }
             set { Fields.Id[this] = value; }
         }
 
-        [DisplayName("Book Name"), Size(50), NotNull, QuickSearch]
+        [DisplayName("书籍名称"), Size(50), NotNull, QuickSearch]
         public String BookName
         {
             get { return Fields.BookName[this]; }
             set { Fields.BookName[this] = value; }
         }
 
-        [DisplayName("Book Categories"), NotNull]
+        [DisplayName("书籍分类"), NotNull]
         public String BookCategories
         {
             get { return Fields.BookCategories[this]; }
             set { Fields.BookCategories[this] = value; }
         }
 
-        [DisplayName("Author"), Size(50)]
+        [DisplayName("作者"), Size(50)]
         public String Author
         {
             get { return Fields.Author[this]; }
             set { Fields.Author[this] = value; }
         }
 
-        [DisplayName("Price")]
+        [DisplayName("价格")]
         public Double? Price
         {
             get { return Fields.Price[this]; }
             set { Fields.Price[this] = value; }
         }
 
-        [DisplayName("Publisher"), Size(100)]
+        [DisplayName("出版社"), Size(100)]
         public String Publisher
         {
             get { return Fields.Publisher[this]; }
             set { Fields.Publisher[this] = value; }
         }
 
-        [DisplayName("Cover Image")]
+        [DisplayName("封面图片")]
         public String CoverImage
         {
             get { return Fields.CoverImage[this]; }
             set { Fields.CoverImage[this] = value; }
         }
 
-        [DisplayName("Recommend Level")]
+        [DisplayName("推荐指数")]
         public Double? RecommendLevel
         {
             get { return Fields.RecommendLevel[this]; }
             set { Fields.RecommendLevel[this] = value; }
         }
 
-        [DisplayName("Insight")]
+        [DisplayName("个人书评")]
         public String Insight
         {
             get { return Fields.Insight[this]; }
             set { Fields.Insight[this] = value; }
         }
 
-        [DisplayName("Summary")]
+        [DisplayName("内容简介")]
         public String Summary
         {
             get { return Fields.Summary[this]; }
             set { Fields.Summary[this] = value; }
         }
 
-        [DisplayName("Need Paid")]
+        [DisplayName("是否有偿"), CheckboxFormatter]
         public Boolean? NeedPaid
         {
             get { return Fields.NeedPaid[this]; }
             set { Fields.NeedPaid[this] = value; }
         }
 
-        [DisplayName("Bookshelf Id")]
+        [DisplayName("所在书架"), ForeignKey("Bookshelf", "ID"), LeftJoin("jBookshelf")]
         public Int32? BookshelfId
         {
             get { return Fields.BookshelfId[this]; }
             set { Fields.BookshelfId[this] = value; }
         }
 
-        [DisplayName("Off Shelves")]
+        [DisplayName("书架名称"), Expression("jBookshelf.[BookshelfName]")]
+        public String BookshelfName
+        {
+            get { return Fields.BookshelfName[this]; }
+            set { Fields.BookshelfName[this] = value; }
+        }
+
+        [DisplayName("是否下架"), CheckboxFormatter]
         public Boolean? OffShelves
         {
             get { return Fields.OffShelves[this]; }
             set { Fields.OffShelves[this] = value; }
         }
 
-        [DisplayName("Status"), NotNull]
+        [DisplayName("状态"), NotNull]
         public Int32? Status
         {
             get { return Fields.Status[this]; }
             set { Fields.Status[this] = value; }
         }
 
-        [DisplayName("Uploader"), NotNull]
+        [DisplayName("Uploader"), NotNull, ForeignKey("WeiXinUser", "ID"), LeftJoin("jWeiXinUser")]
         public Int32? Uploader
         {
             get { return Fields.Uploader[this]; }
             set { Fields.Uploader[this] = value; }
         }
 
-        [DisplayName("Upload Time"), NotNull]
+        [DisplayName("上传者"), Expression("jWeiXinUser.[NickName]")]
+        public String UploaderNickName
+        {
+            get { return Fields.UploaderNickName[this]; }
+            set { Fields.UploaderNickName[this] = value; }
+        }
+
+        [DisplayName("上传时间"), NotNull]
         public DateTime? UploadTime
         {
             get { return Fields.UploadTime[this]; }
@@ -174,11 +188,15 @@ namespace Sanctum.Community.Entities
 
             public Int32Field BookshelfId;
 
+            public StringField BookshelfName;
+
             public BooleanField OffShelves;
 
             public Int32Field Status;
 
             public Int32Field Uploader;
+
+            public StringField UploaderNickName;
 
             public DateTimeField UploadTime;
 

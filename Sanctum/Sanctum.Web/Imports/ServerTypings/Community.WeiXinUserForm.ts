@@ -5,7 +5,7 @@
         Country: Serenity.StringEditor;
         Province: Serenity.StringEditor;
         City: Serenity.StringEditor;
-        HeaderImage: Serenity.StringEditor;
+        HeaderImage: Serenity.ImageUploadEditor;
         Mobile: Serenity.StringEditor;
         Address: Serenity.StringEditor;
         HonourRank: Serenity.DecimalEditor;
@@ -29,8 +29,9 @@
 
                 var s = Serenity;
                 var w0 = s.StringEditor;
-                var w1 = s.DecimalEditor;
-                var w2 = s.DateEditor;
+                var w1 = s.ImageUploadEditor;
+                var w2 = s.DecimalEditor;
+                var w3 = s.DateEditor;
 
                 Q.initFormType(WeiXinUserForm, [
                     'OpenId', w0,
@@ -38,16 +39,16 @@
                     'Country', w0,
                     'Province', w0,
                     'City', w0,
-                    'HeaderImage', w0,
+                    'HeaderImage', w1,
                     'Mobile', w0,
                     'Address', w0,
-                    'HonourRank', w1,
-                    'KnowledgeRank', w1,
+                    'HonourRank', w2,
+                    'KnowledgeRank', w2,
                     'PersonalityEval', w0,
                     'HobbyCategory', w0,
-                    'ActiveLongitude', w1,
-                    'ActiveLatitude', w1,
-                    'LastActiveTime', w2
+                    'ActiveLongitude', w2,
+                    'ActiveLatitude', w2,
+                    'LastActiveTime', w3
                 ]);
             }
         }

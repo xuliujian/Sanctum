@@ -28,7 +28,7 @@ declare namespace Sanctum.Administration {
         const enum Fields {
             Id = "Id",
             LanguageId = "LanguageId",
-            LanguageName = "LanguageName",
+            LanguageName = "LanguageName"
         }
     }
 }
@@ -45,7 +45,7 @@ declare namespace Sanctum.Administration {
             Update = "Administration/Language/Update",
             Delete = "Administration/Language/Delete",
             Retrieve = "Administration/Language/Retrieve",
-            List = "Administration/Language/List",
+            List = "Administration/Language/List"
         }
     }
 }
@@ -87,7 +87,7 @@ declare namespace Sanctum.Administration {
             RolePermissionId = "RolePermissionId",
             RoleId = "RoleId",
             PermissionKey = "PermissionKey",
-            RoleRoleName = "RoleRoleName",
+            RoleRoleName = "RoleRoleName"
         }
     }
 }
@@ -98,7 +98,7 @@ declare namespace Sanctum.Administration {
         function List(request: RolePermissionListRequest, onSuccess?: (response: RolePermissionListResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         const enum Methods {
             Update = "Administration/RolePermission/Update",
-            List = "Administration/RolePermission/List",
+            List = "Administration/RolePermission/List"
         }
     }
 }
@@ -123,7 +123,7 @@ declare namespace Sanctum.Administration {
         function getLookup(): Q.Lookup<RoleRow>;
         const enum Fields {
             RoleId = "RoleId",
-            RoleName = "RoleName",
+            RoleName = "RoleName"
         }
     }
 }
@@ -140,7 +140,7 @@ declare namespace Sanctum.Administration {
             Update = "Administration/Role/Update",
             Delete = "Administration/Role/Delete",
             Retrieve = "Administration/Role/Retrieve",
-            List = "Administration/Role/List",
+            List = "Administration/Role/List"
         }
     }
 }
@@ -177,7 +177,7 @@ declare namespace Sanctum.Administration {
         const enum Methods {
             ListConnections = "Administration/Sergen/ListConnections",
             ListTables = "Administration/Sergen/ListTables",
-            Generate = "Administration/Sergen/Generate",
+            Generate = "Administration/Sergen/Generate"
         }
     }
 }
@@ -210,7 +210,7 @@ declare namespace Sanctum.Administration {
         function Update(request: TranslationUpdateRequest, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         const enum Methods {
             List = "Administration/Translation/List",
-            Update = "Administration/Translation/Update",
+            Update = "Administration/Translation/Update"
         }
     }
 }
@@ -266,7 +266,7 @@ declare namespace Sanctum.Administration {
             PermissionKey = "PermissionKey",
             Granted = "Granted",
             Username = "Username",
-            User = "User",
+            User = "User"
         }
     }
 }
@@ -281,7 +281,7 @@ declare namespace Sanctum.Administration {
             Update = "Administration/UserPermission/Update",
             List = "Administration/UserPermission/List",
             ListRolePermissions = "Administration/UserPermission/ListRolePermissions",
-            ListPermissionKeys = "Administration/UserPermission/ListPermissionKeys",
+            ListPermissionKeys = "Administration/UserPermission/ListPermissionKeys"
         }
     }
 }
@@ -318,7 +318,7 @@ declare namespace Sanctum.Administration {
             UserId = "UserId",
             RoleId = "RoleId",
             Username = "Username",
-            User = "User",
+            User = "User"
         }
     }
 }
@@ -329,7 +329,7 @@ declare namespace Sanctum.Administration {
         function List(request: UserRoleListRequest, onSuccess?: (response: UserRoleListResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         const enum Methods {
             Update = "Administration/UserRole/Update",
-            List = "Administration/UserRole/List",
+            List = "Administration/UserRole/List"
         }
     }
 }
@@ -381,7 +381,7 @@ declare namespace Sanctum.Administration {
             InsertUserId = "InsertUserId",
             InsertDate = "InsertDate",
             UpdateUserId = "UpdateUserId",
-            UpdateDate = "UpdateDate",
+            UpdateDate = "UpdateDate"
         }
     }
 }
@@ -400,7 +400,7 @@ declare namespace Sanctum.Administration {
             Delete = "Administration/User/Delete",
             Undelete = "Administration/User/Undelete",
             Retrieve = "Administration/User/Retrieve",
-            List = "Administration/User/List",
+            List = "Administration/User/List"
         }
     }
 }
@@ -441,7 +441,7 @@ declare namespace Sanctum.Common {
             UserId = "UserId",
             PreferenceType = "PreferenceType",
             Name = "Name",
-            Value = "Value",
+            Value = "Value"
         }
     }
 }
@@ -452,7 +452,7 @@ declare namespace Sanctum.Common {
         function Retrieve(request: UserPreferenceRetrieveRequest, onSuccess?: (response: UserPreferenceRetrieveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         const enum Methods {
             Update = "Common/UserPreference/Update",
-            Retrieve = "Common/UserPreference/Retrieve",
+            Retrieve = "Common/UserPreference/Retrieve"
         }
     }
 }
@@ -516,7 +516,7 @@ declare namespace Sanctum.Community {
             ZipCode = "ZipCode",
             FirstChar = "FirstChar",
             Longitude = "Longitude",
-            Latitude = "Latitude",
+            Latitude = "Latitude"
         }
     }
 }
@@ -533,7 +533,7 @@ declare namespace Sanctum.Community {
             Update = "Community/Area/Update",
             Delete = "Community/Area/Delete",
             Retrieve = "Community/Area/Retrieve",
-            List = "Community/Area/List",
+            List = "Community/Area/List"
         }
     }
 }
@@ -581,7 +581,7 @@ declare namespace Sanctum.Community {
             Creator = "Creator",
             CreatedTime = "CreatedTime",
             Modifier = "Modifier",
-            ModifiedTime = "ModifiedTime",
+            ModifiedTime = "ModifiedTime"
         }
     }
 }
@@ -598,7 +598,7 @@ declare namespace Sanctum.Community {
             Update = "Community/BookCategory/Update",
             Delete = "Community/BookCategory/Delete",
             Retrieve = "Community/BookCategory/Retrieve",
-            List = "Community/BookCategory/List",
+            List = "Community/BookCategory/List"
         }
     }
 }
@@ -623,7 +623,9 @@ declare namespace Sanctum.Community {
     interface BookCommentRow {
         Id?: number;
         BookId?: number;
+        BookName?: string;
         CommentUserId?: number;
+        CommentUserNickName?: string;
         ApprovalCount?: number;
         CommentContent?: string;
         ReplyCommentId?: number;
@@ -636,11 +638,13 @@ declare namespace Sanctum.Community {
         const enum Fields {
             Id = "Id",
             BookId = "BookId",
+            BookName = "BookName",
             CommentUserId = "CommentUserId",
+            CommentUserNickName = "CommentUserNickName",
             ApprovalCount = "ApprovalCount",
             CommentContent = "CommentContent",
             ReplyCommentId = "ReplyCommentId",
-            CommentTime = "CommentTime",
+            CommentTime = "CommentTime"
         }
     }
 }
@@ -657,7 +661,7 @@ declare namespace Sanctum.Community {
             Update = "Community/BookComment/Update",
             Delete = "Community/BookComment/Delete",
             Retrieve = "Community/BookComment/Retrieve",
-            List = "Community/BookComment/List",
+            List = "Community/BookComment/List"
         }
     }
 }
@@ -696,6 +700,7 @@ declare namespace Sanctum.Community {
         Id?: number;
         GroupName?: string;
         OwnerId?: number;
+        OwnerNickName?: string;
         CreatedTime?: string;
     }
     namespace BookFriendGroupRow {
@@ -706,7 +711,8 @@ declare namespace Sanctum.Community {
             Id = "Id",
             GroupName = "GroupName",
             OwnerId = "OwnerId",
-            CreatedTime = "CreatedTime",
+            OwnerNickName = "OwnerNickName",
+            CreatedTime = "CreatedTime"
         }
     }
 }
@@ -723,7 +729,7 @@ declare namespace Sanctum.Community {
             Update = "Community/BookFriendGroup/Update",
             Delete = "Community/BookFriendGroup/Delete",
             Retrieve = "Community/BookFriendGroup/Retrieve",
-            List = "Community/BookFriendGroup/List",
+            List = "Community/BookFriendGroup/List"
         }
     }
 }
@@ -731,7 +737,9 @@ declare namespace Sanctum.Community {
     interface BookFriendRow {
         Id?: number;
         GroupId?: number;
+        GroupName?: string;
         MemberId?: number;
+        MemberNickName?: string;
         Status?: number;
         ActiveLevel?: number;
         JoinTime?: string;
@@ -742,10 +750,12 @@ declare namespace Sanctum.Community {
         const enum Fields {
             Id = "Id",
             GroupId = "GroupId",
+            GroupName = "GroupName",
             MemberId = "MemberId",
+            MemberNickName = "MemberNickName",
             Status = "Status",
             ActiveLevel = "ActiveLevel",
-            JoinTime = "JoinTime",
+            JoinTime = "JoinTime"
         }
     }
 }
@@ -762,7 +772,7 @@ declare namespace Sanctum.Community {
             Update = "Community/BookFriend/Update",
             Delete = "Community/BookFriend/Delete",
             Retrieve = "Community/BookFriend/Retrieve",
-            List = "Community/BookFriend/List",
+            List = "Community/BookFriend/List"
         }
     }
 }
@@ -807,7 +817,7 @@ declare namespace Sanctum.Community {
             Creator = "Creator",
             CreatedTime = "CreatedTime",
             Modifier = "Modifier",
-            ModifiedTime = "ModifiedTime",
+            ModifiedTime = "ModifiedTime"
         }
     }
 }
@@ -824,7 +834,7 @@ declare namespace Sanctum.Community {
             Update = "Community/Bookshelf/Update",
             Delete = "Community/Bookshelf/Delete",
             Retrieve = "Community/Bookshelf/Retrieve",
-            List = "Community/Bookshelf/List",
+            List = "Community/Bookshelf/List"
         }
     }
 }
@@ -847,7 +857,9 @@ declare namespace Sanctum.Community {
     interface BorrowApplyRow {
         Id?: number;
         ApplyBookId?: number;
+        BookName?: string;
         Applier?: number;
+        ApplierNickName?: string;
         ApplyTime?: string;
         ApplyStatus?: number;
     }
@@ -857,9 +869,11 @@ declare namespace Sanctum.Community {
         const enum Fields {
             Id = "Id",
             ApplyBookId = "ApplyBookId",
+            BookName = "BookName",
             Applier = "Applier",
+            ApplierNickName = "ApplierNickName",
             ApplyTime = "ApplyTime",
-            ApplyStatus = "ApplyStatus",
+            ApplyStatus = "ApplyStatus"
         }
     }
 }
@@ -876,7 +890,7 @@ declare namespace Sanctum.Community {
             Update = "Community/BorrowApply/Update",
             Delete = "Community/BorrowApply/Delete",
             Retrieve = "Community/BorrowApply/Retrieve",
-            List = "Community/BorrowApply/List",
+            List = "Community/BorrowApply/List"
         }
     }
 }
@@ -907,8 +921,10 @@ declare namespace Sanctum.Community {
     interface BorrowRecordRow {
         Id?: number;
         DebitUserId?: number;
+        DebitUserNickName?: string;
         BorrowTime?: string;
         BookId?: number;
+        BookName?: string;
         BorrowRequirementId?: number;
         BorrowApplyId?: number;
         Status?: number;
@@ -926,8 +942,10 @@ declare namespace Sanctum.Community {
         const enum Fields {
             Id = "Id",
             DebitUserId = "DebitUserId",
+            DebitUserNickName = "DebitUserNickName",
             BorrowTime = "BorrowTime",
             BookId = "BookId",
+            BookName = "BookName",
             BorrowRequirementId = "BorrowRequirementId",
             BorrowApplyId = "BorrowApplyId",
             Status = "Status",
@@ -936,7 +954,7 @@ declare namespace Sanctum.Community {
             DebitRemarkContent = "DebitRemarkContent",
             DebitRemarkTime = "DebitRemarkTime",
             RenterRemarkContent = "RenterRemarkContent",
-            RenterRemarkTime = "RenterRemarkTime",
+            RenterRemarkTime = "RenterRemarkTime"
         }
     }
 }
@@ -953,7 +971,7 @@ declare namespace Sanctum.Community {
             Update = "Community/BorrowRecord/Update",
             Delete = "Community/BorrowRecord/Delete",
             Retrieve = "Community/BorrowRecord/Retrieve",
-            List = "Community/BorrowRecord/List",
+            List = "Community/BorrowRecord/List"
         }
     }
 }
@@ -961,7 +979,7 @@ declare namespace Sanctum.Community {
 }
 declare namespace Sanctum.Community {
     interface BorrowRequirementForm {
-        Publisher: Serenity.IntegerEditor;
+        PublisherID: Serenity.IntegerEditor;
         BookName: Serenity.StringEditor;
         BookCategory: Serenity.StringEditor;
         IsPaid: Serenity.BooleanEditor;
@@ -978,7 +996,8 @@ declare namespace Sanctum.Community {
 declare namespace Sanctum.Community {
     interface BorrowRequirementRow {
         Id?: number;
-        Publisher?: number;
+        PublisherID?: number;
+        PublisherNickName?: string;
         BookName?: string;
         BookCategory?: string;
         IsPaid?: boolean;
@@ -992,13 +1011,14 @@ declare namespace Sanctum.Community {
         const localTextPrefix = "Community.BorrowRequirement";
         const enum Fields {
             Id = "Id",
-            Publisher = "Publisher",
+            PublisherID = "PublisherID",
+            PublisherNickName = "PublisherNickName",
             BookName = "BookName",
             BookCategory = "BookCategory",
             IsPaid = "IsPaid",
             Status = "Status",
             ViewCount = "ViewCount",
-            PublishTime = "PublishTime",
+            PublishTime = "PublishTime"
         }
     }
 }
@@ -1015,7 +1035,7 @@ declare namespace Sanctum.Community {
             Update = "Community/BorrowRequirement/Update",
             Delete = "Community/BorrowRequirement/Delete",
             Retrieve = "Community/BorrowRequirement/Retrieve",
-            List = "Community/BorrowRequirement/List",
+            List = "Community/BorrowRequirement/List"
         }
     }
 }
@@ -1043,8 +1063,10 @@ declare namespace Sanctum.Community {
     interface DonationRecordRow {
         Id?: number;
         DonateUserId?: number;
+        DonateNickName?: string;
         DonatedTime?: string;
         BookId?: number;
+        BookName?: string;
         DonationStyle?: number;
         Comment?: string;
         IsReceived?: boolean;
@@ -1059,14 +1081,16 @@ declare namespace Sanctum.Community {
         const enum Fields {
             Id = "Id",
             DonateUserId = "DonateUserId",
+            DonateNickName = "DonateNickName",
             DonatedTime = "DonatedTime",
             BookId = "BookId",
+            BookName = "BookName",
             DonationStyle = "DonationStyle",
             Comment = "Comment",
             IsReceived = "IsReceived",
             Receiver = "Receiver",
             Charger = "Charger",
-            ReceivedTime = "ReceivedTime",
+            ReceivedTime = "ReceivedTime"
         }
     }
 }
@@ -1083,7 +1107,7 @@ declare namespace Sanctum.Community {
             Update = "Community/DonationRecord/Update",
             Delete = "Community/DonationRecord/Delete",
             Retrieve = "Community/DonationRecord/Retrieve",
-            List = "Community/DonationRecord/List",
+            List = "Community/DonationRecord/List"
         }
     }
 }
@@ -1128,7 +1152,7 @@ declare namespace Sanctum.Community {
             Creator = "Creator",
             CreatedTime = "CreatedTime",
             Modifier = "Modifier",
-            ModifiedTime = "ModifiedTime",
+            ModifiedTime = "ModifiedTime"
         }
     }
 }
@@ -1145,7 +1169,7 @@ declare namespace Sanctum.Community {
             Update = "Community/PersonalityAnalysis/Update",
             Delete = "Community/PersonalityAnalysis/Delete",
             Retrieve = "Community/PersonalityAnalysis/Retrieve",
-            List = "Community/PersonalityAnalysis/List",
+            List = "Community/PersonalityAnalysis/List"
         }
     }
 }
@@ -1189,9 +1213,11 @@ declare namespace Sanctum.Community {
         Summary?: string;
         NeedPaid?: boolean;
         BookshelfId?: number;
+        BookshelfName?: string;
         OffShelves?: boolean;
         Status?: number;
         Uploader?: number;
+        UploaderNickName?: string;
         UploadTime?: string;
     }
     namespace PrivateBookRow {
@@ -1211,10 +1237,12 @@ declare namespace Sanctum.Community {
             Summary = "Summary",
             NeedPaid = "NeedPaid",
             BookshelfId = "BookshelfId",
+            BookshelfName = "BookshelfName",
             OffShelves = "OffShelves",
             Status = "Status",
             Uploader = "Uploader",
-            UploadTime = "UploadTime",
+            UploaderNickName = "UploaderNickName",
+            UploadTime = "UploadTime"
         }
     }
 }
@@ -1231,7 +1259,7 @@ declare namespace Sanctum.Community {
             Update = "Community/PrivateBook/Update",
             Delete = "Community/PrivateBook/Delete",
             Retrieve = "Community/PrivateBook/Retrieve",
-            List = "Community/PrivateBook/List",
+            List = "Community/PrivateBook/List"
         }
     }
 }
@@ -1268,6 +1296,7 @@ declare namespace Sanctum.Community {
         ViewCount?: number;
         HeatLevel?: number;
         Referrer?: number;
+        ReferrerNickName?: string;
         ReferTime?: string;
     }
     namespace RecommendBookRow {
@@ -1285,7 +1314,8 @@ declare namespace Sanctum.Community {
             ViewCount = "ViewCount",
             HeatLevel = "HeatLevel",
             Referrer = "Referrer",
-            ReferTime = "ReferTime",
+            ReferrerNickName = "ReferrerNickName",
+            ReferTime = "ReferTime"
         }
     }
 }
@@ -1302,7 +1332,7 @@ declare namespace Sanctum.Community {
             Update = "Community/RecommendBook/Update",
             Delete = "Community/RecommendBook/Delete",
             Retrieve = "Community/RecommendBook/Retrieve",
-            List = "Community/RecommendBook/List",
+            List = "Community/RecommendBook/List"
         }
     }
 }
@@ -1315,7 +1345,7 @@ declare namespace Sanctum.Community {
         Country: Serenity.StringEditor;
         Province: Serenity.StringEditor;
         City: Serenity.StringEditor;
-        HeaderImage: Serenity.StringEditor;
+        HeaderImage: Serenity.ImageUploadEditor;
         Mobile: Serenity.StringEditor;
         Address: Serenity.StringEditor;
         HonourRank: Serenity.DecimalEditor;
@@ -1334,7 +1364,7 @@ declare namespace Sanctum.Community {
 }
 declare namespace Sanctum.Community {
     interface WeiXinUserRow {
-        Id?: number;
+        ID?: number;
         OpenId?: string;
         NickName?: string;
         Country?: string;
@@ -1352,11 +1382,11 @@ declare namespace Sanctum.Community {
         LastActiveTime?: string;
     }
     namespace WeiXinUserRow {
-        const idProperty = "Id";
+        const idProperty = "ID";
         const nameProperty = "OpenId";
         const localTextPrefix = "Community.WeiXinUser";
         const enum Fields {
-            Id = "Id",
+            ID = "ID",
             OpenId = "OpenId",
             NickName = "NickName",
             Country = "Country",
@@ -1371,7 +1401,7 @@ declare namespace Sanctum.Community {
             HobbyCategory = "HobbyCategory",
             ActiveLongitude = "ActiveLongitude",
             ActiveLatitude = "ActiveLatitude",
-            LastActiveTime = "LastActiveTime",
+            LastActiveTime = "LastActiveTime"
         }
     }
 }
@@ -1388,7 +1418,7 @@ declare namespace Sanctum.Community {
             Update = "Community/WeiXinUser/Update",
             Delete = "Community/WeiXinUser/Delete",
             Retrieve = "Community/WeiXinUser/Retrieve",
-            List = "Community/WeiXinUser/List",
+            List = "Community/WeiXinUser/List"
         }
     }
 }
@@ -1638,20 +1668,20 @@ declare namespace Sanctum.Administration {
         private searchText;
         private byParentKey;
         constructor(container: JQuery, opt: PermissionCheckEditorOptions);
-        private getItemGrantRevokeClass(item, grant);
-        private roleOrImplicit(key);
-        private getItemEffectiveClass(item);
+        private getItemGrantRevokeClass;
+        private roleOrImplicit;
+        private getItemEffectiveClass;
         protected getColumns(): Slick.Column[];
         setItems(items: PermissionCheckItem[]): void;
         protected onViewSubmit(): boolean;
         protected onViewFilter(item: PermissionCheckItem): boolean;
-        private matchContains(item);
-        private getDescendants(item, excludeGroups);
+        private matchContains;
+        private getDescendants;
         protected onClick(e: any, row: any, cell: any): void;
-        private getParentKey(key);
+        private getParentKey;
         protected getButtons(): Serenity.ToolButton[];
         protected createToolbarExtensions(): void;
-        private getSortedGroupAndPermissionKeys(titleByKey);
+        private getSortedGroupAndPermissionKeys;
         value: UserPermissionRow[];
         private _rolePermissions;
         rolePermissions: string[];
@@ -1822,7 +1852,7 @@ declare namespace Sanctum {
     class StaticTextBlock extends Serenity.Widget<StaticTextBlockOptions> implements Serenity.ISetEditValue {
         private value;
         constructor(container: JQuery, options: StaticTextBlockOptions);
-        private updateElementContent();
+        private updateElementContent;
         /**
          * By implementing ISetEditValue interface, we allow this editor to display its field value.
          * But only do this when our text content is not explicitly set in options

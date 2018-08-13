@@ -13,10 +13,10 @@ namespace Sanctum.Community.Columns
     [BasedOnRow(typeof(Entities.WeiXinUserRow), CheckNames = true)]
     public class WeiXinUserColumns
     {
-        [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
-        public Int32 Id { get; set; }
-        [EditLink]
+        [DisplayName("Db.Shared.RecordId"), AlignRight]
+        public Int32 ID { get; set; }        
         public String OpenId { get; set; }
+        [EditLink]
         public String NickName { get; set; }
         public String Country { get; set; }
         public String Province { get; set; }

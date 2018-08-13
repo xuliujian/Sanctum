@@ -16,6 +16,7 @@
     <EmbeddedResource Remove="Modules\Default\**" />
     <None Remove="Modules\Default\**" />
     <Content Remove="wwwroot\favbook.ico" />
+    <EmbeddedResource Remove="Migrations\DefaultDB\SanctumDB.sql" />
     <None Update="wwwroot\**\*">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </None>

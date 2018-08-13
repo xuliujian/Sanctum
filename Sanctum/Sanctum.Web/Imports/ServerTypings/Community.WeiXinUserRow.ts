@@ -1,6 +1,6 @@
 ﻿namespace Sanctum.Community {
     export interface WeiXinUserRow {
-        Id?: number;
+        ID?: number;
         OpenId?: string;
         NickName?: string;
         Country?: string;
@@ -19,12 +19,12 @@
     }
 
     export namespace WeiXinUserRow {
-        export const idProperty = 'Id';
+        export const idProperty = 'ID';
         export const nameProperty = 'OpenId';
         export const localTextPrefix = 'Community.WeiXinUser';
 
         export declare const enum Fields {
-            Id = "Id",
+            ID = "ID",
             OpenId = "OpenId",
             NickName = "NickName",
             Country = "Country",

@@ -12,9 +12,11 @@
         Summary?: string;
         NeedPaid?: boolean;
         BookshelfId?: number;
+        BookshelfName?: string;
         OffShelves?: boolean;
         Status?: number;
         Uploader?: number;
+        UploaderNickName?: string;
         UploadTime?: string;
     }
 
@@ -36,9 +38,11 @@
             Summary = "Summary",
             NeedPaid = "NeedPaid",
             BookshelfId = "BookshelfId",
+            BookshelfName = "BookshelfName",
             OffShelves = "OffShelves",
             Status = "Status",
             Uploader = "Uploader",
+            UploaderNickName = "UploaderNickName",
             UploadTime = "UploadTime"
         }
     }

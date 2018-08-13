@@ -10,62 +10,69 @@ namespace Sanctum.Community.Entities
     using System.IO;
 
     [ConnectionKey("Default"), Module("Community"), TableName("[dbo].[BorrowRequirement]")]
-    [DisplayName("Borrow Requirement"), InstanceName("Borrow Requirement")]
+    [DisplayName("借阅发布"), InstanceName("借阅发布")]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
     public sealed class BorrowRequirementRow : Row, IIdRow, INameRow
     {
 
-        [DisplayName("Id"), Column("ID"), NotNull]
+        [DisplayName("Id"), Column("ID"), Identity, PrimaryKey]
         public Int32? Id
         {
             get { return Fields.Id[this]; }
             set { Fields.Id[this] = value; }
         }
 
-        [DisplayName("Publisher"), NotNull]
-        public Int32? Publisher
+        [DisplayName("PublisherID"), NotNull, ForeignKey("WeiXinUser","ID"), LeftJoin("jWeiXinUser")]
+        public Int32? PublisherID
         {
-            get { return Fields.Publisher[this]; }
-            set { Fields.Publisher[this] = value; }
+            get { return Fields.PublisherID[this]; }
+            set { Fields.PublisherID[this] = value; }
         }
 
-        [DisplayName("Book Name"), Size(100), QuickSearch]
+        [DisplayName("发布人昵称"), Expression("jWeiXinUser.[NickName]")]
+        public String PublisherNickName
+        {
+            get { return Fields.PublisherNickName[this]; }
+            set { Fields.PublisherNickName[this] = value; }
+        }
+
+        [DisplayName("书籍名称"), Size(100), QuickSearch]
         public String BookName
         {
             get { return Fields.BookName[this]; }
             set { Fields.BookName[this] = value; }
         }
 
-        [DisplayName("Book Category"), Size(100)]
+        [DisplayName("书籍类别"), Size(100)]
         public String BookCategory
         {
             get { return Fields.BookCategory[this]; }
             set { Fields.BookCategory[this] = value; }
         }
 
-        [DisplayName("Is Paid"), NotNull]
+        [DisplayName("是否有偿"), NotNull, CheckboxFormatter]
         public Boolean? IsPaid
         {
             get { return Fields.IsPaid[this]; }
             set { Fields.IsPaid[this] = value; }
         }
 
-        [DisplayName("Status"), NotNull]
+        [DisplayName("状态"), NotNull]
         public Int32? Status
         {
             get { return Fields.Status[this]; }
             set { Fields.Status[this] = value; }
         }
 
-        [DisplayName("View Count"), NotNull]
+        [DisplayName("点击次数"), NotNull]
         public Int32? ViewCount
         {
             get { return Fields.ViewCount[this]; }
             set { Fields.ViewCount[this] = value; }
         }
 
-        [DisplayName("Publish Time")]
+        [DisplayName("发布时间")]
         public DateTime? PublishTime
         {
             get { return Fields.PublishTime[this]; }
@@ -96,7 +103,9 @@ namespace Sanctum.Community.Entities
 
             public Int32Field Id;
 
-            public Int32Field Publisher;
+            public Int32Field PublisherID;
+
+            public StringField PublisherNickName;
 
             public StringField BookName;
 

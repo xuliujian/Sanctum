@@ -2,7 +2,9 @@
     export interface BookCommentRow {
         Id?: number;
         BookId?: number;
+        BookName?: string;
         CommentUserId?: number;
+        CommentUserNickName?: string;
         ApprovalCount?: number;
         CommentContent?: string;
         ReplyCommentId?: number;
@@ -17,7 +19,9 @@
         export declare const enum Fields {
             Id = "Id",
             BookId = "BookId",
+            BookName = "BookName",
             CommentUserId = "CommentUserId",
+            CommentUserNickName = "CommentUserNickName",
             ApprovalCount = "ApprovalCount",
             CommentContent = "CommentContent",
             ReplyCommentId = "ReplyCommentId",

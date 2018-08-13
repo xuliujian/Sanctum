@@ -10,111 +10,111 @@ namespace Sanctum.Community.Entities
     using System.IO;
 
     [ConnectionKey("Default"), Module("Community"), TableName("[dbo].[WeiXinUser]")]
-    [DisplayName("Wei Xin User"), InstanceName("Wei Xin User")]
+    [DisplayName("微信用户"), InstanceName("微信用户")]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
     public sealed class WeiXinUserRow : Row, IIdRow, INameRow
     {
 
-        [DisplayName("Id"), NotNull]
-        public Int32? Id
+        [DisplayName("ID"), PrimaryKey, Identity, Hidden]
+        public Int32? ID
         {
-            get { return Fields.Id[this]; }
-            set { Fields.Id[this] = value; }
+            get { return Fields.ID[this]; }
+            set { Fields.ID[this] = value; }
         }
 
-        [DisplayName("Open Id"), Size(32), NotNull, QuickSearch]
+        [DisplayName("OPENID"), Size(32), NotNull, Hidden]
         public String OpenId
         {
             get { return Fields.OpenId[this]; }
             set { Fields.OpenId[this] = value; }
         }
 
-        [DisplayName("Nick Name"), Size(32)]
+        [DisplayName("昵称"), Size(32), QuickSearch]
         public String NickName
         {
             get { return Fields.NickName[this]; }
             set { Fields.NickName[this] = value; }
         }
 
-        [DisplayName("Country"), Size(50)]
+        [DisplayName("国家"), Size(50)]
         public String Country
         {
             get { return Fields.Country[this]; }
             set { Fields.Country[this] = value; }
         }
 
-        [DisplayName("Province"), Size(50)]
+        [DisplayName("省份"), Size(50)]
         public String Province
         {
             get { return Fields.Province[this]; }
             set { Fields.Province[this] = value; }
         }
 
-        [DisplayName("City"), Size(50)]
+        [DisplayName("城市"), Size(50)]
         public String City
         {
             get { return Fields.City[this]; }
             set { Fields.City[this] = value; }
         }
 
-        [DisplayName("Header Image"), NotNull]
+        [DisplayName("头像"), NotNull, ImageUploadEditor]
         public String HeaderImage
         {
             get { return Fields.HeaderImage[this]; }
             set { Fields.HeaderImage[this] = value; }
         }
 
-        [DisplayName("Mobile"), Size(50)]
+        [DisplayName("手机号"), Size(50)]
         public String Mobile
         {
             get { return Fields.Mobile[this]; }
             set { Fields.Mobile[this] = value; }
         }
 
-        [DisplayName("Address")]
+        [DisplayName("通信地址")]
         public String Address
         {
             get { return Fields.Address[this]; }
             set { Fields.Address[this] = value; }
         }
 
-        [DisplayName("Honour Rank"), NotNull]
+        [DisplayName("荣誉等级"), NotNull]
         public Double? HonourRank
         {
             get { return Fields.HonourRank[this]; }
             set { Fields.HonourRank[this] = value; }
         }
 
-        [DisplayName("Knowledge Rank"), NotNull]
+        [DisplayName("财富等级"), NotNull]
         public Double? KnowledgeRank
         {
             get { return Fields.KnowledgeRank[this]; }
             set { Fields.KnowledgeRank[this] = value; }
         }
 
-        [DisplayName("Personality Eval")]
+        [DisplayName("个性评判")]
         public String PersonalityEval
         {
             get { return Fields.PersonalityEval[this]; }
             set { Fields.PersonalityEval[this] = value; }
         }
 
-        [DisplayName("Hobby Category")]
+        [DisplayName("喜好书籍类型")]
         public String HobbyCategory
         {
             get { return Fields.HobbyCategory[this]; }
             set { Fields.HobbyCategory[this] = value; }
         }
 
-        [DisplayName("Active Longitude"), Size(18)]
+        [DisplayName("活动位置经度"), Size(18)]
         public Decimal? ActiveLongitude
         {
             get { return Fields.ActiveLongitude[this]; }
             set { Fields.ActiveLongitude[this] = value; }
         }
 
-        [DisplayName("Active Latitude"), Size(18)]
+        [DisplayName("活动位置维度"), Size(18)]
         public Decimal? ActiveLatitude
         {
             get { return Fields.ActiveLatitude[this]; }
@@ -132,7 +132,7 @@ namespace Sanctum.Community.Entities
 
         IIdField IIdRow.IdField
         {
-            get { return Fields.Id; }
+            get { return Fields.ID; }
         }
 
         StringField INameRow.NameField
@@ -150,7 +150,7 @@ namespace Sanctum.Community.Entities
         public class RowFields : RowFieldsBase
         {
 
-            public Int32Field Id;
+            public Int32Field ID;
 
             public StringField OpenId;
 

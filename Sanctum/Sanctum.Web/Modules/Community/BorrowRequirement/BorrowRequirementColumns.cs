@@ -15,7 +15,7 @@ namespace Sanctum.Community.Columns
     {
         [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
         public Int32 Id { get; set; }
-        public Int32 Publisher { get; set; }
+        public Int32 PublisherID { get; set; }
         [EditLink]
         public String BookName { get; set; }
         public String BookCategory { get; set; }

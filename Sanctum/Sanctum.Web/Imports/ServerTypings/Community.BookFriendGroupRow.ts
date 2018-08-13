@@ -3,6 +3,7 @@
         Id?: number;
         GroupName?: string;
         OwnerId?: number;
+        OwnerNickName?: string;
         CreatedTime?: string;
     }
 
@@ -15,6 +16,7 @@
             Id = "Id",
             GroupName = "GroupName",
             OwnerId = "OwnerId",
+            OwnerNickName = "OwnerNickName",
             CreatedTime = "CreatedTime"
         }
     }

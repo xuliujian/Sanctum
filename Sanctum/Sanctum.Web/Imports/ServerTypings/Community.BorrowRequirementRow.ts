@@ -1,7 +1,8 @@
 ﻿namespace Sanctum.Community {
     export interface BorrowRequirementRow {
         Id?: number;
-        Publisher?: number;
+        PublisherID?: number;
+        PublisherNickName?: string;
         BookName?: string;
         BookCategory?: string;
         IsPaid?: boolean;
@@ -17,7 +18,8 @@
 
         export declare const enum Fields {
             Id = "Id",
-            Publisher = "Publisher",
+            PublisherID = "PublisherID",
+            PublisherNickName = "PublisherNickName",
             BookName = "BookName",
             BookCategory = "BookCategory",
             IsPaid = "IsPaid",

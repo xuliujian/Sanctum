@@ -10,34 +10,41 @@ namespace Sanctum.Community.Entities
     using System.IO;
 
     [ConnectionKey("Default"), Module("Community"), TableName("[dbo].[BookFriendGroup]")]
-    [DisplayName("Book Friend Group"), InstanceName("Book Friend Group")]
+    [DisplayName("书友群"), InstanceName("书友群")]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
     public sealed class BookFriendGroupRow : Row, IIdRow, INameRow
     {
 
-        [DisplayName("Id"), Column("ID"), NotNull]
+        [DisplayName("Id"), Column("ID"), PrimaryKey, Identity]
         public Int32? Id
         {
             get { return Fields.Id[this]; }
             set { Fields.Id[this] = value; }
         }
 
-        [DisplayName("Group Name"), Size(50), NotNull, QuickSearch]
+        [DisplayName("群名称"), Size(50), NotNull, QuickSearch]
         public String GroupName
         {
             get { return Fields.GroupName[this]; }
             set { Fields.GroupName[this] = value; }
         }
 
-        [DisplayName("Owner Id"), NotNull]
+        [DisplayName("拥有者"), NotNull, ForeignKey("WeiXinUser","ID"), LeftJoin("jWeiXinUser")]
         public Int32? OwnerId
         {
             get { return Fields.OwnerId[this]; }
             set { Fields.OwnerId[this] = value; }
         }
 
-        [DisplayName("Created Time"), NotNull]
+        [DisplayName("群主昵称"), Expression("jWeiXinUser.[NickName]")]
+        public String OwnerNickName
+        {
+            get { return Fields.OwnerNickName[this]; }
+            set { Fields.OwnerNickName[this] = value; }
+        }
+
+        [DisplayName("创建时间"), NotNull]
         public DateTime? CreatedTime
         {
             get { return Fields.CreatedTime[this]; }
@@ -71,6 +78,8 @@ namespace Sanctum.Community.Entities
             public StringField GroupName;
 
             public Int32Field OwnerId;
+
+            public StringField OwnerNickName;
 
             public DateTimeField CreatedTime;
 

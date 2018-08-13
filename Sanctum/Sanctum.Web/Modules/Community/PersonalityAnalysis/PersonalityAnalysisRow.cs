@@ -10,62 +10,62 @@ namespace Sanctum.Community.Entities
     using System.IO;
 
     [ConnectionKey("Default"), Module("Community"), TableName("[dbo].[PersonalityAnalysis]")]
-    [DisplayName("Personality Analysis"), InstanceName("Personality Analysis")]
+    [DisplayName("个性分析"), InstanceName("个性分析")]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
     public sealed class PersonalityAnalysisRow : Row, IIdRow, INameRow
     {
 
-        [DisplayName("Id"), Column("ID"), NotNull]
+        [DisplayName("Id"), Column("ID"), Identity, PrimaryKey]
         public Int32? Id
         {
             get { return Fields.Id[this]; }
             set { Fields.Id[this] = value; }
         }
 
-        [DisplayName("Feature Name"), Size(50), NotNull, QuickSearch]
+        [DisplayName("个性特征"), Size(50), NotNull, QuickSearch]
         public String FeatureName
         {
             get { return Fields.FeatureName[this]; }
             set { Fields.FeatureName[this] = value; }
         }
 
-        [DisplayName("Feature Decription"), Size(1073741823), NotNull]
+        [DisplayName("特征描述"), Size(1073741823), NotNull]
         public String FeatureDecription
         {
             get { return Fields.FeatureDecription[this]; }
             set { Fields.FeatureDecription[this] = value; }
         }
 
-        [DisplayName("Match Categories")]
+        [DisplayName("匹配书籍类型")]
         public String MatchCategories
         {
             get { return Fields.MatchCategories[this]; }
             set { Fields.MatchCategories[this] = value; }
         }
 
-        [DisplayName("Creator"), NotNull]
+        [DisplayName("Creator"), NotNull, Hidden]
         public Int32? Creator
         {
             get { return Fields.Creator[this]; }
             set { Fields.Creator[this] = value; }
         }
 
-        [DisplayName("Created Time"), NotNull]
+        [DisplayName("Created Time"), NotNull, Hidden]
         public DateTime? CreatedTime
         {
             get { return Fields.CreatedTime[this]; }
             set { Fields.CreatedTime[this] = value; }
         }
 
-        [DisplayName("Modifier"), NotNull]
+        [DisplayName("Modifier"), NotNull, Hidden]
         public Int32? Modifier
         {
             get { return Fields.Modifier[this]; }
             set { Fields.Modifier[this] = value; }
         }
 
-        [DisplayName("Modified Time"), NotNull]
+        [DisplayName("Modified Time"), NotNull, Hidden]
         public DateTime? ModifiedTime
         {
             get { return Fields.ModifiedTime[this]; }

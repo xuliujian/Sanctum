@@ -13,7 +13,7 @@ namespace Sanctum.Community.Forms
     [BasedOnRow(typeof(Entities.BorrowRequirementRow), CheckNames = true)]
     public class BorrowRequirementForm
     {
-        public Int32 Publisher { get; set; }
+        public Int32 PublisherID { get; set; }
         public String BookName { get; set; }
         public String BookCategory { get; set; }
         public Boolean IsPaid { get; set; }

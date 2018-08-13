@@ -2,8 +2,10 @@
     export interface BorrowRecordRow {
         Id?: number;
         DebitUserId?: number;
+        DebitUserNickName?: string;
         BorrowTime?: string;
         BookId?: number;
+        BookName?: string;
         BorrowRequirementId?: number;
         BorrowApplyId?: number;
         Status?: number;
@@ -23,8 +25,10 @@
         export declare const enum Fields {
             Id = "Id",
             DebitUserId = "DebitUserId",
+            DebitUserNickName = "DebitUserNickName",
             BorrowTime = "BorrowTime",
             BookId = "BookId",
+            BookName = "BookName",
             BorrowRequirementId = "BorrowRequirementId",
             BorrowApplyId = "BorrowApplyId",
             Status = "Status",

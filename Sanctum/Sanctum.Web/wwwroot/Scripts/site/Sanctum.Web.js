@@ -888,7 +888,7 @@ var Sanctum;
                     var w2 = s.BooleanEditor;
                     var w3 = s.DateEditor;
                     Q.initFormType(BorrowRequirementForm, [
-                        'Publisher', w0,
+                        'PublisherID', w0,
                         'BookName', w1,
                         'BookCategory', w1,
                         'IsPaid', w2,
@@ -1227,24 +1227,25 @@ var Sanctum;
                     WeiXinUserForm.init = true;
                     var s = Serenity;
                     var w0 = s.StringEditor;
-                    var w1 = s.DecimalEditor;
-                    var w2 = s.DateEditor;
+                    var w1 = s.ImageUploadEditor;
+                    var w2 = s.DecimalEditor;
+                    var w3 = s.DateEditor;
                     Q.initFormType(WeiXinUserForm, [
                         'OpenId', w0,
                         'NickName', w0,
                         'Country', w0,
                         'Province', w0,
                         'City', w0,
-                        'HeaderImage', w0,
+                        'HeaderImage', w1,
                         'Mobile', w0,
                         'Address', w0,
-                        'HonourRank', w1,
-                        'KnowledgeRank', w1,
+                        'HonourRank', w2,
+                        'KnowledgeRank', w2,
                         'PersonalityEval', w0,
                         'HobbyCategory', w0,
-                        'ActiveLongitude', w1,
-                        'ActiveLatitude', w1,
-                        'LastActiveTime', w2
+                        'ActiveLongitude', w2,
+                        'ActiveLatitude', w2,
+                        'LastActiveTime', w3
                     ]);
                 }
                 return _this;
@@ -1261,7 +1262,7 @@ var Sanctum;
     (function (Community) {
         var WeiXinUserRow;
         (function (WeiXinUserRow) {
-            WeiXinUserRow.idProperty = 'Id';
+            WeiXinUserRow.idProperty = 'ID';
             WeiXinUserRow.nameProperty = 'OpenId';
             WeiXinUserRow.localTextPrefix = 'Community.WeiXinUser';
         })(WeiXinUserRow = Community.WeiXinUserRow || (Community.WeiXinUserRow = {}));

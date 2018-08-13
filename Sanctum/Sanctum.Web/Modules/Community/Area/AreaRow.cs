@@ -10,90 +10,90 @@ namespace Sanctum.Community.Entities
     using System.IO;
 
     [ConnectionKey("Default"), Module("Community"), TableName("[dbo].[Area]")]
-    [DisplayName("Area"), InstanceName("Area")]
+    [DisplayName("地区"), InstanceName("地区")]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
     public sealed class AreaRow : Row, IIdRow, INameRow
     {
 
-        [DisplayName("Id"), Column("ID"), Size(50), PrimaryKey, QuickSearch]
+        [DisplayName("Id"), Column("ID"), Size(50), PrimaryKey, Hidden]
         public String Id
         {
             get { return Fields.Id[this]; }
             set { Fields.Id[this] = value; }
         }
 
-        [DisplayName("Pid"), Column("PID"), Size(50)]
+        [DisplayName("所属区域"), Column("PID"), Size(50), Hidden]
         public String Pid
         {
             get { return Fields.Pid[this]; }
             set { Fields.Pid[this] = value; }
         }
 
-        [DisplayName("Short Name"), Size(100)]
+        [DisplayName("简称"), Size(100),QuickSearch]
         public String ShortName
         {
             get { return Fields.ShortName[this]; }
             set { Fields.ShortName[this] = value; }
         }
 
-        [DisplayName("Name"), Size(100)]
+        [DisplayName("名称"), Size(100), QuickSearch]
         public String Name
         {
             get { return Fields.Name[this]; }
             set { Fields.Name[this] = value; }
         }
 
-        [DisplayName("Full Name"), Size(255)]
+        [DisplayName("全称"), Size(255), QuickSearch]
         public String FullName
         {
             get { return Fields.FullName[this]; }
             set { Fields.FullName[this] = value; }
         }
 
-        [DisplayName("Level")]
+        [DisplayName("层级")]
         public Int32? Level
         {
             get { return Fields.Level[this]; }
             set { Fields.Level[this] = value; }
         }
 
-        [DisplayName("Pin Yin"), Size(100)]
+        [DisplayName("拼音"), Size(100)]
         public String PinYin
         {
             get { return Fields.PinYin[this]; }
             set { Fields.PinYin[this] = value; }
         }
 
-        [DisplayName("Code"), Size(10)]
+        [DisplayName("长途区号"), Size(10)]
         public String Code
         {
             get { return Fields.Code[this]; }
             set { Fields.Code[this] = value; }
         }
 
-        [DisplayName("Zip Code"), Size(10)]
+        [DisplayName("邮政编码"), Size(10)]
         public String ZipCode
         {
             get { return Fields.ZipCode[this]; }
             set { Fields.ZipCode[this] = value; }
         }
 
-        [DisplayName("First Char"), Size(50)]
+        [DisplayName("首字母"), Size(50)]
         public String FirstChar
         {
             get { return Fields.FirstChar[this]; }
             set { Fields.FirstChar[this] = value; }
         }
 
-        [DisplayName("Longitude"), Size(18)]
+        [DisplayName("经度"), Size(18)]
         public Decimal? Longitude
         {
             get { return Fields.Longitude[this]; }
             set { Fields.Longitude[this] = value; }
         }
 
-        [DisplayName("Latitude"), Size(18)]
+        [DisplayName("维度"), Size(18)]
         public Decimal? Latitude
         {
             get { return Fields.Latitude[this]; }

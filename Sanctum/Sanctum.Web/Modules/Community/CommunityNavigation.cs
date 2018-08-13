@@ -10,7 +10,7 @@ using MyPages = Sanctum.Community.Pages;
 [assembly: NavigationLink(20000, "Community/Bookshelf", typeof(MyPages.BookshelfController), icon: "fa-shekel-sign")]
 [assembly: NavigationLink(20000, "Community/Borrow Apply", typeof(MyPages.BorrowApplyController), icon: "fa-american-sign-language-interpreting")]
 [assembly: NavigationLink(20000, "Community/Borrow Record", typeof(MyPages.BorrowRecordController), icon: "fa-list-alt")]
-[assembly: NavigationLink(20000, "Community/Borrow Requirement", typeof(MyPages.BorrowRequirementController), icon: "fa-accusoft")]
+[assembly: NavigationLink(20000, "Community/Borrow Requirement", typeof(MyPages.BorrowRequirementController), icon: "fa-building")]
 [assembly: NavigationLink(20000, "Community/Donation Record", typeof(MyPages.DonationRecordController), icon: "fa-hand-holding-usd")]
 [assembly: NavigationLink(20000, "Community/Personality Analysis", typeof(MyPages.PersonalityAnalysisController), icon: "fa-assistive-listening-systems")]
 [assembly: NavigationLink(20000, "Community/Private Book", typeof(MyPages.PrivateBookController), icon: "fa-book")]

@@ -13,9 +13,9 @@ namespace Sanctum.Community.Columns
     [BasedOnRow(typeof(Entities.RecommendBookRow), CheckNames = true)]
     public class RecommendBookColumns
     {
-        [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
+        [DisplayName("Db.Shared.RecordId"), AlignRight]
         public Int32 Id { get; set; }
-        [EditLink]
+        [EditLink, Width(200)]
         public String BookName { get; set; }
         public String BookCategory { get; set; }
         public String Author { get; set; }

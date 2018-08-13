@@ -2,8 +2,10 @@
     export interface DonationRecordRow {
         Id?: number;
         DonateUserId?: number;
+        DonateNickName?: string;
         DonatedTime?: string;
         BookId?: number;
+        BookName?: string;
         DonationStyle?: number;
         Comment?: string;
         IsReceived?: boolean;
@@ -20,8 +22,10 @@
         export declare const enum Fields {
             Id = "Id",
             DonateUserId = "DonateUserId",
+            DonateNickName = "DonateNickName",
             DonatedTime = "DonatedTime",
             BookId = "BookId",
+            BookName = "BookName",
             DonationStyle = "DonationStyle",
             Comment = "Comment",
             IsReceived = "IsReceived",

@@ -10,62 +10,62 @@ namespace Sanctum.Community.Entities
     using System.IO;
 
     [ConnectionKey("Default"), Module("Community"), TableName("[dbo].[Bookshelf]")]
-    [DisplayName("Bookshelf"), InstanceName("Bookshelf")]
+    [DisplayName("书架"), InstanceName("书架")]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
     public sealed class BookshelfRow : Row, IIdRow, INameRow
     {
 
-        [DisplayName("Id"), Column("ID"), NotNull]
+        [DisplayName("Id"), Column("ID"), PrimaryKey, Identity,Hidden]
         public Int32? Id
         {
             get { return Fields.Id[this]; }
             set { Fields.Id[this] = value; }
         }
 
-        [DisplayName("Bookshelf Name"), Size(32), NotNull, QuickSearch]
+        [DisplayName("书架名称"), Size(32), NotNull, QuickSearch]
         public String BookshelfName
         {
             get { return Fields.BookshelfName[this]; }
             set { Fields.BookshelfName[this] = value; }
         }
 
-        [DisplayName("Adorn Background")]
+        [DisplayName("背景图片")]
         public String AdornBackground
         {
             get { return Fields.AdornBackground[this]; }
             set { Fields.AdornBackground[this] = value; }
         }
 
-        [DisplayName("Introduction")]
+        [DisplayName("书架介绍")]
         public String Introduction
         {
             get { return Fields.Introduction[this]; }
             set { Fields.Introduction[this] = value; }
         }
 
-        [DisplayName("Creator"), NotNull]
+        [DisplayName("创建者"), NotNull]
         public Int32? Creator
         {
             get { return Fields.Creator[this]; }
             set { Fields.Creator[this] = value; }
         }
 
-        [DisplayName("Created Time"), NotNull]
+        [DisplayName("创建时间"), NotNull]
         public DateTime? CreatedTime
         {
             get { return Fields.CreatedTime[this]; }
             set { Fields.CreatedTime[this] = value; }
         }
 
-        [DisplayName("Modifier")]
+        [DisplayName("更新者")]
         public Int32? Modifier
         {
             get { return Fields.Modifier[this]; }
             set { Fields.Modifier[this] = value; }
         }
 
-        [DisplayName("Modified Time")]
+        [DisplayName("更新时间")]
         public DateTime? ModifiedTime
         {
             get { return Fields.ModifiedTime[this]; }

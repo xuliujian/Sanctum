@@ -10,55 +10,69 @@ namespace Sanctum.Community.Entities
     using System.IO;
 
     [ConnectionKey("Default"), Module("Community"), TableName("[dbo].[BookComment]")]
-    [DisplayName("Book Comment"), InstanceName("Book Comment")]
+    [DisplayName("书籍评论"), InstanceName("书籍评论")]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
     public sealed class BookCommentRow : Row, IIdRow, INameRow
     {
 
-        [DisplayName("Id"), Column("ID"), NotNull]
+        [DisplayName("Id"), Column("ID"), PrimaryKey, Identity]
         public Int32? Id
         {
             get { return Fields.Id[this]; }
             set { Fields.Id[this] = value; }
         }
 
-        [DisplayName("Book Id"), NotNull]
+        [DisplayName("Book Id"), NotNull, ForeignKey("PrivateBook", "ID"), LeftJoin("jBook")]
         public Int32? BookId
         {
             get { return Fields.BookId[this]; }
             set { Fields.BookId[this] = value; }
         }
 
-        [DisplayName("Comment User Id"), NotNull]
+        [DisplayName("书籍名称"), Expression("jBook.[BookName]")]
+        public String BookName
+        {
+            get { return Fields.BookName[this]; }
+            set { Fields.BookName[this] = value; }
+        }
+
+        [DisplayName("评论者"), NotNull, ForeignKey("WeiXinUser", "ID"), LeftJoin("jWeiXinUser")]
         public Int32? CommentUserId
         {
             get { return Fields.CommentUserId[this]; }
             set { Fields.CommentUserId[this] = value; }
         }
 
-        [DisplayName("Approval Count")]
+        [DisplayName("评论者"), Expression("jWeiXinUser.[NickName]")]
+        public String CommentUserNickName
+        {
+            get { return Fields.CommentUserNickName[this]; }
+            set { Fields.CommentUserNickName[this] = value; }
+        }
+
+        [DisplayName("点赞")]
         public Int32? ApprovalCount
         {
             get { return Fields.ApprovalCount[this]; }
             set { Fields.ApprovalCount[this] = value; }
         }
 
-        [DisplayName("Comment Content"), Size(1073741823), NotNull, QuickSearch]
+        [DisplayName("评论内容"), Size(1073741823), NotNull, QuickSearch]
         public String CommentContent
         {
             get { return Fields.CommentContent[this]; }
             set { Fields.CommentContent[this] = value; }
         }
 
-        [DisplayName("Reply Comment Id"), NotNull]
+        [DisplayName("回复评论"), NotNull, Hidden]
         public Int32? ReplyCommentId
         {
             get { return Fields.ReplyCommentId[this]; }
             set { Fields.ReplyCommentId[this] = value; }
         }
 
-        [DisplayName("Comment Time"), NotNull]
+        [DisplayName("评论时间"), NotNull]
         public DateTime? CommentTime
         {
             get { return Fields.CommentTime[this]; }
@@ -90,8 +104,10 @@ namespace Sanctum.Community.Entities
             public Int32Field Id;
 
             public Int32Field BookId;
+            public StringField BookName;
 
             public Int32Field CommentUserId;
+            public StringField CommentUserNickName;
 
             public Int32Field ApprovalCount;
 

@@ -13,9 +13,10 @@ namespace Sanctum.Community.Columns
     [BasedOnRow(typeof(Entities.AreaRow), CheckNames = true)]
     public class AreaColumns
     {
-        [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
+        [ DisplayName("Db.Shared.RecordId"), AlignRight]
         public String Id { get; set; }
         public String Pid { get; set; }
+        [EditLink]
         public String ShortName { get; set; }
         public String Name { get; set; }
         public String FullName { get; set; }
